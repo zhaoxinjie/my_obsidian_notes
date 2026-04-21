@@ -11,12 +11,14 @@
             "id": "d3a8c20974aecaf3",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "raw/assets/harness-design-long-running-apps.pdf"
+                "file": "wiki/concepts/MCP.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "harness-design-long-running-apps"
+              "icon": "lucide-file",
+              "title": "MCP"
             }
           }
         ]
@@ -184,6 +186,11 @@
   },
   "active": "d3a8c20974aecaf3",
   "lastOpenFiles": [
+    "raw/assets/你不知道的 Claude Code：架构、治理与工程实践 - Tw93.pdf",
+    "raw/你不知道的 Claude Code：架构、治理与工程实践 - Tw93.pdf",
+    "wiki/concepts/LLM Wiki.md",
+    "wiki/concepts/harness工程.md",
+    "raw/assets/harness-design-long-running-apps.pdf",
     "wiki/entities/Andrej Karpathy.md",
     "wiki/sources/2026-04-21 Anthropic - Building Effective Agents.md",
     "wiki/sources/2026-04-21 Karpathy - LLM Wiki.md",
@@ -193,7 +200,6 @@
     "wiki/sources/2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey.md",
     "wiki/concepts/README.md",
     "wiki/concepts/LLM-based Agents.md",
-    "wiki/concepts/harness工程.md",
     "wiki/concepts/上下文工程.md",
     "wiki/concepts/构建高效智能体.md",
     "wiki/questions/README.md",
@@ -208,7 +214,6 @@
     "wiki/sources/2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents.md",
     "raw/assets/README.md",
     "raw/assets/writing-tools-for-agents.pdf",
-    "raw/assets/harness-design-long-running-apps.pdf",
     "raw/assets/effective-harnesses-for-long-running-agents.pdf",
     "raw/assets/effective-context-engineering-for-ai-agents.pdf",
     "raw/assets/contextual-retrieval.pdf",
@@ -216,10 +221,7 @@
     "raw/assets/building-effective-agents.pdf",
     "raw/assets/ai-resistant-technical-evaluations.pdf",
     "raw/assets/advanced-tool-use.pdf",
-    "raw/assets/LLmSurvey.pdf",
     "raw/inbox/README.md",
-    "wiki/syntheses/agent 工程地图.md",
-    "raw/sources/README.md",
     "未命名.canvas"
   ]
 }
