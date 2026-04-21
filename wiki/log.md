@@ -38,3 +38,22 @@ tags:
 - 将该文沉淀为概念页：`harness工程`
 - 新建来源页：`Anthropic Engineering - Effective Harnesses for Long-Running Agents`
 - 更新 `wiki/index.md`
+
+## [2026-04-21] discuss+ingest | Harness Design for Long-Running Application Development
+- 先讨论定位，再决定不单独建新概念页
+- 将其核心观点综合进 `harness工程`
+- 新建来源页：`Anthropic Engineering - Harness Design for Long-Running Application Development`
+- 更新 `wiki/index.md`
+
+## [2026-04-21] discuss+ingest | Effective Context Engineering for AI Agents
+- 先讨论概念定位，再落库
+- 新建概念页：`上下文工程（context engineering）`
+- 新建来源页：`Anthropic Engineering - Effective Context Engineering for AI Agents`
+- 更新 `harness工程` 与 `构建高效智能体` 的关联
+- 更新 `wiki/index.md`
+
+## [2026-04-21] discuss+ingest | Writing Effective Tools for Agents
+- 先讨论概念定位，再落库
+- 新建概念页：`工具（tool）`
+- 新建来源页：`Anthropic Engineering - Writing Effective Tools for Agents`
+- 更新 `wiki/index.md`
