@@ -12,7 +12,7 @@ tags:
 
 # 2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents
 ## 来源信息
-- 原始路径: `raw/inbox/effective-harnesses-for-long-running-agents.pdf`
+- 原始路径: `raw/assets/effective-harnesses-for-long-running-agents.pdf`
 - 标题: Effective harnesses for long-running agents
 - 作者机构: Anthropic Engineering
 - 发布日期: 2025-11-26

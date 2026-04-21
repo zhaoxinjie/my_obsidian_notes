@@ -12,7 +12,7 @@ tags:
 
 # 2026-04-21 Anthropic Engineering - Writing Effective Tools for Agents
 ## 来源信息
-- 原始路径: `raw/inbox/writing-tools-for-agents.pdf`
+- 原始路径: `raw/assets/writing-tools-for-agents.pdf`
 - 标题: Writing effective tools for agents
 - 作者机构: Anthropic Engineering
 - 发布日期: 2025-09-11

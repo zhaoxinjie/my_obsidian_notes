@@ -13,7 +13,7 @@ tags:
 
 # 2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development
 ## 来源信息
-- 原始路径: `raw/inbox/harness-design-long-running-apps.pdf`
+- 原始路径: `raw/assets/harness-design-long-running-apps.pdf`
 - 标题: Harness design for long-running application development
 - 作者: Prithvi Rajasekaran
 - 作者机构: Anthropic Engineering

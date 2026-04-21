@@ -11,7 +11,7 @@ tags:
 
 # 2026-04-21 Anthropic - Building Effective Agents
 ## 来源信息
-- 原始路径: `raw/inbox/building-effective-agents.pdf`
+- 原始路径: `raw/assets/building-effective-agents.pdf`
 - 标题: Building effective agents
 - 作者机构: Anthropic
 - 日期: 2024-12-19

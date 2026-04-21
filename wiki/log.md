@@ -21,7 +21,7 @@ tags:
 - 更新 `wiki/index.md` 以反映首批正式知识页面
 
 ## [2026-04-21] ingest | Xi et al. - The Rise and Potential of Large Language Model Based Agents: A Survey
-- 摄入 `raw/inbox/LLmSurvey.pdf`
+- 摄入 `raw/assets/LLmSurvey.pdf`
 - 新建来源页：LLM-based agents survey
 - 新建概念页：`大语言模型智能体（LLM-based Agents）`、`脑-感知-行动框架（Brain-Perception-Action）`
 - 新建实体页：`Zhiheng Xi`
@@ -56,4 +56,27 @@ tags:
 - 先讨论概念定位，再落库
 - 新建概念页：`工具（tool）`
 - 新建来源页：`Anthropic Engineering - Writing Effective Tools for Agents`
+- 更新 `wiki/index.md`
+
+## [2026-04-21] discuss+ingest | Designing AI-Resistant Technical Evaluations
+- 先讨论概念定位，再落库
+- 新建概念页：`AI评估`
+- 新建来源页：`Anthropic Engineering - Designing AI-Resistant Technical Evaluations`
+- 更新 `wiki/index.md`
+
+## [2026-04-21] discuss+ingest | Introducing Contextual Retrieval
+- 先讨论定位，再决定不单独建一级概念页
+- 将其核心观点综合进 `上下文工程`
+- 新建来源页：`Anthropic Research - Introducing Contextual Retrieval`
+- 更新 `wiki/index.md`
+
+## [2026-04-21] discuss+ingest | MCP related articles
+- 基于后续几篇文章补建概念页：`MCP（Model Context Protocol）`
+- 新建来源页：`Anthropic Engineering - Code Execution with MCP`
+- 新建来源页：`Anthropic Engineering - Introducing Advanced Tool Use`
+- 更新 `wiki/index.md`
+
+## [2026-04-21] synthesis | agent engineering map
+- 新建综合页：`agent 工程地图（agent engineering map）`
+- 将当前 agent 相关内容整理为 6 层结构
 - 更新 `wiki/index.md`

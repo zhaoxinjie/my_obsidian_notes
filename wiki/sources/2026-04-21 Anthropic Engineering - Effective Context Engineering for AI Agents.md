@@ -12,7 +12,7 @@ tags:
 
 # 2026-04-21 Anthropic Engineering - Effective Context Engineering for AI Agents
 ## 来源信息
-- 原始路径: `raw/inbox/effective-context-engineering-for-ai-agents.pdf`
+- 原始路径: `raw/assets/effective-context-engineering-for-ai-agents.pdf`
 - 标题: Effective context engineering for AI agents
 - 作者机构: Anthropic Applied AI team
 - 发布日期: 2025-09-29
