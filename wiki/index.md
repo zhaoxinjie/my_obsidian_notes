@@ -16,6 +16,13 @@ tags:
 ## 运行与维护
 - [[wiki/log|知识库日志]] - 摄入、问答和维护记录
 
+## 目录说明
+- [[wiki/concepts/README|概念页说明]] - 概念页的职责与适用范围
+- [[wiki/entities/README|实体页说明]] - 实体页的职责与适用范围
+- [[wiki/sources/README|来源页说明]] - 来源页的职责与写法
+- [[wiki/questions/README|问题页说明]] - 问题归档的适用标准
+- [[wiki/syntheses/README|综合页说明]] - 多来源综合分析页的定位
+
 ## 来源页
 - [[wiki/sources/2026-04-21 Karpathy - LLM Wiki|2026-04-21 Karpathy - LLM Wiki]] - Karpathy 提出的 LLM 维护型 wiki 方法论来源页
 - [[wiki/sources/2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey|2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey]] - LLM-based agents 的综述论文，提供领域框架、应用全景与开放问题
@@ -33,7 +40,6 @@ tags:
 - [[wiki/concepts/LLM Wiki|LLM Wiki]] - 用 LLM 持续维护、而非每次临时检索的知识库模式
 - [[wiki/concepts/个人知识库|个人知识库]] - 面向个人成长、项目与长期主题研究的知识组织方式
 - [[wiki/concepts/LLM-based Agents|大语言模型智能体（LLM-based Agents）]] - 以大语言模型为核心构建智能体的研究主题
-- [[wiki/concepts/Brain Perception Action Framework|脑-感知-行动框架（Brain-Perception-Action）]] - 论文提出的 LLM agent 通用结构框架
 - [[wiki/concepts/构建高效智能体|构建高效智能体（Building Effective Agents）]] - 强调最小必要复杂度、工具设计和环境反馈的智能体方法论
 - [[wiki/concepts/harness工程|harness工程]] - 为长时运行智能体搭建可持续交接、可验证推进的工程外壳
 - [[wiki/concepts/上下文工程|上下文工程（context engineering）]] - 管理模型每轮工作记忆与信息流的底层工程方法
@@ -43,7 +49,6 @@ tags:
 
 ## 实体页
 - [[wiki/entities/Andrej Karpathy|Andrej Karpathy]] - 提出该模式的研究者与工程师
-- [[wiki/entities/Zhiheng Xi|Zhiheng Xi]] - LLM-based agents survey 的主要作者之一
 
 ## 问题页
 - 暂无问题归档

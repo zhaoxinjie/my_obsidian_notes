@@ -26,9 +26,6 @@ tags:
 ## 相关来源
 - [[wiki/sources/2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey|2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents: A Survey]]
 
-## 相关实体
-- [[wiki/entities/Zhiheng Xi|Zhiheng Xi]]
-
 ## 张力与开放问题
 - 目前 agent 的“泛化能力”更多来自模型本身，还是系统工程包装？
 - 记忆、规划和工具调用中，哪一块最限制真实落地？
