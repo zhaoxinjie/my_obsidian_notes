@@ -20,12 +20,6 @@ tags:
 - 新建实体页：`Andrej Karpathy`
 - 更新 `wiki/index.md` 以反映首批正式知识页面
 
-## [2026-04-21] ingest | Xi et al. - The Rise and Potential of Large Language Model Based Agents: A Survey
-- 摄入 `raw/assets/LLmSurvey.pdf`
-- 新建来源页：LLM-based agents survey
-- 新建概念页：`大语言模型智能体（LLM-based Agents）`
-- 更新 `wiki/index.md`
-
 ## [2026-04-21] discuss+ingest | Anthropic - Building Effective Agents
 - 先讨论再落库，将该文定位为“方法论概念页”而非普通摘要
 - 新建概念页：`构建高效智能体（Building Effective Agents）`

@@ -25,7 +25,6 @@ tags:
 
 ## 来源页
 - [[wiki/sources/2026-04-21 Karpathy - LLM Wiki|2026-04-21 Karpathy - LLM Wiki]] - Karpathy 提出的 LLM 维护型 wiki 方法论来源页
-- [[wiki/sources/2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey|2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey]] - LLM-based agents 的综述论文，提供领域框架、应用全景与开放问题
 - [[wiki/sources/2026-04-21 Anthropic - Building Effective Agents|2026-04-21 Anthropic - Building Effective Agents]] - 关于何时使用工作流或智能体，以及如何用最小复杂度构建有效 agent 的实践文章
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents|2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents]] - 关于长时运行智能体如何通过工程外壳保持连续性、增量推进与干净交接的文章
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development|2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development]] - 关于生成与评估分离、三角色 harness 和阶段合同的工程文章
@@ -39,7 +38,6 @@ tags:
 ## 概念页
 - [[wiki/concepts/LLM Wiki|LLM Wiki]] - 用 LLM 持续维护、而非每次临时检索的知识库模式
 - [[wiki/concepts/个人知识库|个人知识库]] - 面向个人成长、项目与长期主题研究的知识组织方式
-- [[wiki/concepts/LLM-based Agents|大语言模型智能体（LLM-based Agents）]] - 以大语言模型为核心构建智能体的研究主题
 - [[wiki/concepts/构建高效智能体|构建高效智能体（Building Effective Agents）]] - 强调最小必要复杂度、工具设计和环境反馈的智能体方法论
 - [[wiki/concepts/harness工程|harness工程]] - 为长时运行智能体搭建可持续交接、可验证推进的工程外壳
 - [[wiki/concepts/上下文工程|上下文工程（context engineering）]] - 管理模型每轮工作记忆与信息流的底层工程方法

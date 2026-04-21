@@ -104,7 +104,7 @@ tags:
 ## 与其他概念的关系
 - 它和 [[wiki/concepts/构建高效智能体|构建高效智能体（Building Effective Agents）]] 的关系是外部验证层（external validation layer）：前者讲怎么构建，AI评估讲怎么证明它真的有效。
 - 它和 [[wiki/concepts/工具|工具（tool）]]、[[wiki/concepts/上下文工程|上下文工程（context engineering）]]、[[wiki/concepts/harness工程|harness工程]] 一样都强调 evaluation-driven，但这里评估对象更广，既包括 AI 系统，也包括 AI 时代的人类能力（both AI systems and human capability in an AI-shaped environment）。
-- 它也与 [[wiki/concepts/LLM-based Agents|大语言模型智能体（LLM-based Agents）]] 相关，因为 agent 能力提升会直接改变什么样的评估还能保有区分度（agent progress changes what kinds of evaluations still work）。
+- 它也与更广义的智能体系统（agent systems）相关，因为 agent 能力提升会直接改变什么样的评估还能保有区分度（agent progress changes what kinds of evaluations still work）。
 
 ## 对知识库场景的启发
 - 以后如果你想评估“这个知识库 agent 是否真的有用”，不能只看它写得像不像（do not judge it only by whether the output sounds good）

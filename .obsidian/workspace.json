@@ -11,14 +11,12 @@
             "id": "d3a8c20974aecaf3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "wiki/concepts/LLM-based Agents.md",
-                "mode": "source",
-                "source": false
+                "file": "raw/assets/harness-design-long-running-apps.pdf"
               },
-              "icon": "lucide-file",
-              "title": "LLM-based Agents"
+              "icon": "lucide-file-text",
+              "title": "harness-design-long-running-apps"
             }
           }
         ]
@@ -78,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 338.5
   },
   "right": {
     "id": "d9fb9f9e5fa95d63",
@@ -186,20 +184,26 @@
   },
   "active": "d3a8c20974aecaf3",
   "lastOpenFiles": [
+    "wiki/entities/Andrej Karpathy.md",
+    "wiki/sources/2026-04-21 Anthropic - Building Effective Agents.md",
+    "wiki/sources/2026-04-21 Karpathy - LLM Wiki.md",
+    "wiki/sources/2026-04-21 Anthropic Research - Introducing Contextual Retrieval.md",
+    "wiki/sources/2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use.md",
+    "wiki/concepts/MCP.md",
+    "wiki/sources/2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey.md",
+    "wiki/concepts/README.md",
+    "wiki/concepts/LLM-based Agents.md",
+    "wiki/concepts/harness工程.md",
+    "wiki/concepts/上下文工程.md",
+    "wiki/concepts/构建高效智能体.md",
     "wiki/questions/README.md",
     "wiki/entities/README.md",
-    "wiki/entities/Andrej Karpathy.md",
     "wiki/entities/Zhiheng Xi.md",
-    "wiki/concepts/harness工程.md",
     "wiki/concepts/Brain Perception Action Framework.md",
     "wiki/concepts/AI评估.md",
-    "wiki/concepts/上下文工程.md",
     "wiki/concepts/工具.md",
-    "wiki/concepts/构建高效智能体.md",
     "wiki/concepts/个人知识库.md",
-    "wiki/concepts/LLM-based Agents.md",
     "raw/sources/2026-03-12 Tw93 - 你不知道的 Claude Code：架构、治理与工程实践.md",
-    "wiki/concepts/MCP.md",
     "system/templates/concept-page-template.md",
     "wiki/sources/2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents.md",
     "raw/assets/README.md",
@@ -216,12 +220,6 @@
     "raw/inbox/README.md",
     "wiki/syntheses/agent 工程地图.md",
     "raw/sources/README.md",
-    "wiki/syntheses/README.md",
-    "wiki/overview.md",
-    "wiki/log.md",
-    "wiki/index.md",
-    "wiki/sources/2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use.md",
-    "wiki/sources/2026-04-21 Anthropic Engineering - Code Execution with MCP.md",
     "未命名.canvas"
   ]
 }
