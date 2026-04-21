@@ -165,7 +165,7 @@ tags:
 ## 与其他概念的关系
 - 它是 [[wiki/concepts/构建高效智能体|构建高效智能体（Building Effective Agents）]] 的延伸，更关注“长时运行”场景下的工程实现。
 - 它建立在 [[wiki/concepts/上下文工程|上下文工程（context engineering）]] 之上。没有稳定的上下文整理与加载机制，harness 很难长期可靠运作。
-- 它和 [[wiki/concepts/LLM-based Agents|大语言模型智能体（LLM-based Agents）]] 的关系是：前者讲系统如何持续运转，后者讲系统是什么。
+- 它和更广义的智能体系统（agent systems）的关系是：前者讲系统如何持续运转，后者讲系统是什么。
 - 它可以被看作“构建高效智能体”在复杂任务上的进一步工程化：当简单 agent 不够时，harness工程回答的是如何通过工件、角色和反馈回路把系统撑住。
 
 ## 相关来源

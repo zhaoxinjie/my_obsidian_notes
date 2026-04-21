@@ -29,7 +29,6 @@ tags:
 
 ## 重要概念
 - [[wiki/concepts/构建高效智能体|构建高效智能体（Building Effective Agents）]]
-- [[wiki/concepts/LLM-based Agents|大语言模型智能体（LLM-based Agents）]]
 
 ## 对知识库的影响
 - 为 agent 主题补上了一张偏工程实践的方法论页面。

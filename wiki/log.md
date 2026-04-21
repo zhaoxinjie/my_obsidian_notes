@@ -20,13 +20,6 @@ tags:
 - 新建实体页：`Andrej Karpathy`
 - 更新 `wiki/index.md` 以反映首批正式知识页面
 
-## [2026-04-21] ingest | Xi et al. - The Rise and Potential of Large Language Model Based Agents: A Survey
-- 摄入 `raw/assets/LLmSurvey.pdf`
-- 新建来源页：LLM-based agents survey
-- 新建概念页：`大语言模型智能体（LLM-based Agents）`、`脑-感知-行动框架（Brain-Perception-Action）`
-- 新建实体页：`Zhiheng Xi`
-- 更新 `wiki/index.md`
-
 ## [2026-04-21] discuss+ingest | Anthropic - Building Effective Agents
 - 先讨论再落库，将该文定位为“方法论概念页”而非普通摘要
 - 新建概念页：`构建高效智能体（Building Effective Agents）`
@@ -80,3 +73,10 @@ tags:
 - 新建综合页：`agent 工程地图（agent engineering map）`
 - 将当前 agent 相关内容整理为 6 层结构
 - 更新 `wiki/index.md`
+
+## [2026-04-21] lint | 首次知识库巡检
+- 对 `wiki/` 执行首次结构与风格巡检
+- 修复早期页面残留的英文小节标题与字段标签
+- 在 `wiki/index.md` 增加目录说明入口，强化目录型 README 的可发现性
+- 检查结果：当前未发现明显重复概念页或断裂主线
+- 备注：若干 `README.md` 在脚本统计中显示为孤立页，主要因为同名文件导致的统计假阳性，不是实际断链
