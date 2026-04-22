@@ -47,6 +47,7 @@ tags:
 
 ## 实体页
 - [[wiki/entities/Andrej Karpathy|Andrej Karpathy]] - 提出该模式的研究者与工程师
+- [[wiki/entities/张一鸣|张一鸣]] - 作为人物研究对象建立的长期观察页
 
 ## 问题页
 - 暂无问题归档
