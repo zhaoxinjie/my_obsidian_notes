@@ -11,14 +11,12 @@
             "id": "d3a8c20974aecaf3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "wiki/concepts/MCP.md",
-                "mode": "source",
-                "source": false
+                "file": "raw/assets/effective-context-engineering-for-ai-agents.pdf"
               },
-              "icon": "lucide-file",
-              "title": "MCP"
+              "icon": "lucide-file-text",
+              "title": "effective-context-engineering-for-ai-agents"
             }
           }
         ]
@@ -186,6 +184,9 @@
   },
   "active": "d3a8c20974aecaf3",
   "lastOpenFiles": [
+    "raw/assets/张一鸣近10年的微博 (张一鸣).pdf",
+    "wiki/entities/张一鸣.md",
+    "wiki/concepts/MCP.md",
     "raw/assets/你不知道的 Claude Code：架构、治理与工程实践 - Tw93.pdf",
     "raw/你不知道的 Claude Code：架构、治理与工程实践 - Tw93.pdf",
     "wiki/concepts/LLM Wiki.md",
@@ -196,7 +197,6 @@
     "wiki/sources/2026-04-21 Karpathy - LLM Wiki.md",
     "wiki/sources/2026-04-21 Anthropic Research - Introducing Contextual Retrieval.md",
     "wiki/sources/2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use.md",
-    "wiki/concepts/MCP.md",
     "wiki/sources/2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey.md",
     "wiki/concepts/README.md",
     "wiki/concepts/LLM-based Agents.md",
@@ -220,8 +220,6 @@
     "raw/assets/code-execution-with-mcp.pdf",
     "raw/assets/building-effective-agents.pdf",
     "raw/assets/ai-resistant-technical-evaluations.pdf",
-    "raw/assets/advanced-tool-use.pdf",
-    "raw/inbox/README.md",
     "未命名.canvas"
   ]
 }
