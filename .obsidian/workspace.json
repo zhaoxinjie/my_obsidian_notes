@@ -11,12 +11,14 @@
             "id": "d3a8c20974aecaf3",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "raw/assets/effective-context-engineering-for-ai-agents.pdf"
+                "file": "wiki/concepts/AI评估.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "effective-context-engineering-for-ai-agents"
+              "icon": "lucide-file",
+              "title": "AI评估"
             }
           }
         ]
@@ -184,15 +186,25 @@
   },
   "active": "d3a8c20974aecaf3",
   "lastOpenFiles": [
-    "raw/assets/张一鸣近10年的微博 (张一鸣).pdf",
-    "wiki/entities/张一鸣.md",
+    "wiki/concepts/工具.md",
+    "wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents.md",
+    "raw/assets/demystifying-evals-for-ai-agents.pdf",
+    "raw/demystifying-evals-for-ai-agents.pdf",
     "wiki/concepts/MCP.md",
+    "wiki/concepts/上下文工程.md",
+    "raw/assets/writing-tools-for-agents.pdf",
+    "wiki/sources/2026-04-22 Anthropic Engineering - The Think Tool.md",
+    "wiki/entities/Andrej Karpathy.md",
+    "wiki/entities/张一鸣.md",
+    "raw/assets/claude-think-tool.pdf",
+    "raw/claude-think-tool.pdf",
+    "raw/assets/effective-context-engineering-for-ai-agents.pdf",
+    "raw/assets/张一鸣近10年的微博 (张一鸣).pdf",
     "raw/assets/你不知道的 Claude Code：架构、治理与工程实践 - Tw93.pdf",
     "raw/你不知道的 Claude Code：架构、治理与工程实践 - Tw93.pdf",
     "wiki/concepts/LLM Wiki.md",
     "wiki/concepts/harness工程.md",
     "raw/assets/harness-design-long-running-apps.pdf",
-    "wiki/entities/Andrej Karpathy.md",
     "wiki/sources/2026-04-21 Anthropic - Building Effective Agents.md",
     "wiki/sources/2026-04-21 Karpathy - LLM Wiki.md",
     "wiki/sources/2026-04-21 Anthropic Research - Introducing Contextual Retrieval.md",
@@ -200,26 +212,16 @@
     "wiki/sources/2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey.md",
     "wiki/concepts/README.md",
     "wiki/concepts/LLM-based Agents.md",
-    "wiki/concepts/上下文工程.md",
     "wiki/concepts/构建高效智能体.md",
     "wiki/questions/README.md",
     "wiki/entities/README.md",
     "wiki/entities/Zhiheng Xi.md",
     "wiki/concepts/Brain Perception Action Framework.md",
     "wiki/concepts/AI评估.md",
-    "wiki/concepts/工具.md",
     "wiki/concepts/个人知识库.md",
     "raw/sources/2026-03-12 Tw93 - 你不知道的 Claude Code：架构、治理与工程实践.md",
     "system/templates/concept-page-template.md",
     "wiki/sources/2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents.md",
-    "raw/assets/README.md",
-    "raw/assets/writing-tools-for-agents.pdf",
-    "raw/assets/effective-harnesses-for-long-running-agents.pdf",
-    "raw/assets/effective-context-engineering-for-ai-agents.pdf",
-    "raw/assets/contextual-retrieval.pdf",
-    "raw/assets/code-execution-with-mcp.pdf",
-    "raw/assets/building-effective-agents.pdf",
-    "raw/assets/ai-resistant-technical-evaluations.pdf",
     "未命名.canvas"
   ]
 }

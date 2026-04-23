@@ -85,3 +85,16 @@ tags:
 - 新建实体页：`张一鸣`
 - 先建立人物研究骨架，不急着写满结论
 - 作为后续人物研究支线的起点
+
+## [2026-04-22] discuss+ingest | The Think Tool
+- 先讨论定位，再决定不单独建概念页
+- 将其核心观点综合进 `工具`
+- 新建来源页：`Anthropic Engineering - The Think Tool`
+- 更新 `wiki/index.md`
+
+## [2026-04-22] discuss+ingest | Demystifying Evals for AI Agents
+- 先讨论定位，再决定不单独建概念页
+- 将其核心观点综合进 `AI评估`
+- 新建来源页：`Anthropic Engineering - Demystifying Evals for AI Agents`
+- 补充了更可操作的 eval 落地方法
+- 更新 `wiki/index.md`
