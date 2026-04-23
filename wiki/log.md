@@ -80,3 +80,21 @@ tags:
 - 在 `wiki/index.md` 增加目录说明入口，强化目录型 README 的可发现性
 - 检查结果：当前未发现明显重复概念页或断裂主线
 - 备注：若干 `README.md` 在脚本统计中显示为孤立页，主要因为同名文件导致的统计假阳性，不是实际断链
+
+## [2026-04-22] seed | 张一鸣人物研究页
+- 新建实体页：`张一鸣`
+- 先建立人物研究骨架，不急着写满结论
+- 作为后续人物研究支线的起点
+
+## [2026-04-22] discuss+ingest | The Think Tool
+- 先讨论定位，再决定不单独建概念页
+- 将其核心观点综合进 `工具`
+- 新建来源页：`Anthropic Engineering - The Think Tool`
+- 更新 `wiki/index.md`
+
+## [2026-04-22] discuss+ingest | Demystifying Evals for AI Agents
+- 先讨论定位，再决定不单独建概念页
+- 将其核心观点综合进 `AI评估`
+- 新建来源页：`Anthropic Engineering - Demystifying Evals for AI Agents`
+- 补充了更可操作的 eval 落地方法
+- 更新 `wiki/index.md`

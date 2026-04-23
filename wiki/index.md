@@ -34,6 +34,8 @@ tags:
 - [[wiki/sources/2026-04-21 Anthropic Research - Introducing Contextual Retrieval|2026-04-21 Anthropic Research - Introducing Contextual Retrieval]] - 关于在检索前给 chunk 补局部语境，以提升 RAG 检索质量的方法
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Code Execution with MCP|2026-04-21 Anthropic Engineering - Code Execution with MCP]] - 关于 MCP 工具规模扩大后，如何用代码执行减少直接 tool calling 的上下文与 token 开销
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use|2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use]] - 关于在大规模工具库中实现动态发现、按需加载与高级工具编排的文章
+- [[wiki/sources/2026-04-22 Anthropic Engineering - The Think Tool|2026-04-22 Anthropic Engineering - The Think Tool]] - 关于在复杂工具链里给模型增加显式中间思考步骤的文章
+- [[wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents|2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents]] - 关于 agent eval 的基本结构、harness、grader、capability/regression 区分与落地路线
 
 ## 概念页
 - [[wiki/concepts/LLM Wiki|LLM Wiki]] - 用 LLM 持续维护、而非每次临时检索的知识库模式
@@ -47,6 +49,7 @@ tags:
 
 ## 实体页
 - [[wiki/entities/Andrej Karpathy|Andrej Karpathy]] - 提出该模式的研究者与工程师
+- [[wiki/entities/张一鸣|张一鸣]] - 作为人物研究对象建立的长期观察页
 
 ## 问题页
 - 暂无问题归档

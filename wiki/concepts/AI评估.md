@@ -2,8 +2,8 @@
 type: concept
 status: active
 created: 2026-04-21
-updated: 2026-04-21
-source_count: 1
+updated: 2026-04-22
+source_count: 2
 tags:
   - concept
   - evaluation
@@ -83,6 +83,215 @@ tags:
 - 让任务包含多次展示能力的机会（create multiple chances to demonstrate capability）
 - 这样更不容易被单次幸运或单一模型策略击穿（this makes the evaluation harder to defeat through one lucky break or one dominant model strategy）
 
+## 评估的基本结构（eval anatomy）
+如果我们把一个 eval 当作工程系统来看，最基础的组成通常包括：
+
+### 1. 任务（task）
+- 一条具体测试用例（test case）
+- 有明确输入、环境和成功标准
+- 它回答的是：要测的具体问题是什么
+
+### 2. 试次（trial）
+- 同一个任务的一次独立尝试（independent attempt）
+- 因为模型输出有随机性，所以单次结果通常不够稳
+- 多次 trial 能帮助我们看一致性，而不只是最好的一次
+
+### 3. 评分器（grader）
+- 用来判断成功与否的逻辑（scoring logic）
+- 可以是确定性检查、测试脚本、静态分析，也可以是 LLM-as-judge
+- 一个任务可以有多个 grader，分别检查不同维度
+
+### 4. 轨迹（transcript / trace）
+- 一次 trial 的完整执行记录
+- 包括提示、工具调用、环境变化、中间结果、最终输出
+- 这不是附属材料，而是排障、校准和发现评分缺陷的核心依据
+
+如果没有清楚区分这四层，团队很容易把“任务设计问题”“评分器 bug”“模型随机波动”“环境噪音”混在一起。
+
+## 能力评估与回归评估（capability vs regression evals）
+这两类评估不能混用，因为它们服务的目标不同。
+
+### 1. 能力评估（capability evals）
+- 关注：系统现在到底能做什么（what the agent can do）
+- 任务通常更难，起始通过率可以较低
+- 作用是给团队一个“要往上爬的坡（hill to climb）”
+
+这类评估更适合：
+- 新能力验证
+- 模型升级比较
+- prompt / harness / tool 改动前后的能力观察
+
+### 2. 回归评估（regression evals）
+- 关注：系统是不是把以前会做的事情弄坏了（does it still do what it used to do）
+- 通过率通常应接近 100%
+- 一旦掉分，默认说明有问题，而不是“模型今天运气不好”
+
+这类评估更适合：
+- 每次提交后的自动检查
+- 模型切换前后的稳定性对比
+- 保护关键工作流不被意外破坏
+
+### 3. 两者的关系
+- 能力评估回答“能不能爬上去”
+- 回归评估回答“会不会掉下来”
+
+一个成熟系统通常两套都需要。只做 capability eval，会高估进步；只做 regression eval，会失去创新方向。
+
+## Eval 到底怎么做（practical workflow）
+如果从零开始做 AI agent 的 eval，我更推荐下面这条实操路径。
+
+### 1. 先明确“成功”长什么样
+- 不要先急着写 benchmark
+- 先把“什么算好”说清楚
+- 如果团队里两个人对成功标准的理解不同，先解决这个问题
+
+这一步的产出应至少包括：
+- 任务目标
+- 约束条件
+- 失败方式
+- 最低可接受结果
+
+### 2. 先收集 20 到 50 个真实任务
+- 不必一开始就追求几百条任务
+- 早期小样本往往已经足够看出系统性问题
+- 最好的任务来源，通常是：真实失败案例、用户反馈、内部 dogfooding 问题、线上事故回放
+
+如果一条 task 不是来自真实需求，而只是“看起来像题目”，它的长期价值通常会更低。
+
+### 3. 给任务分层
+一开始就把任务混在一起，后面会很难解释结果。更稳的做法是至少做这几层：
+- 核心成功任务：系统必须稳定完成
+- 边界任务：最容易出错的场景
+- 挑战任务：当前能力还不稳定，但未来想提升的任务
+
+这样分层后，capability 和 regression 两套 eval 也更容易拆开。
+
+### 4. 先做确定性 grader（deterministic grader）
+只要能用测试、脚本、断言、结构检查解决，就优先不用 LLM judge。
+
+典型做法包括：
+- 单元测试（unit tests）
+- 集成测试（integration tests）
+- 状态断言（state assertions）
+- 输出格式检查
+- 关键字段比对
+
+确定性 grader 的优势是：
+- 便宜
+- 稳
+- 好调试
+
+### 5. 再补 LLM-as-judge
+有些维度天然不容易写死，比如：
+- 是否“做得好”
+- 是否满足复杂主观要求
+- 是否足够自然
+
+这时可以引入 LLM judge，但要注意：
+- rubric 要清楚
+- 最好拆成多个维度分别判断
+- 要定期和人工判断做校准（human calibration）
+- 要允许模型返回 `Unknown` 之类的退出项，避免硬判
+
+### 6. 搭好评估运行环境（eval harness）
+agent eval 很容易被“不是 agent 本身的问题”污染，所以 harness 很重要。
+
+至少要保证：
+- 每个 trial 尽量从干净环境开始
+- 不共享会污染结果的状态
+- 环境配置尽量稳定
+- 测的 agent 与生产 agent 尽量一致
+
+否则你最后测到的，可能是：
+- 缓存命中
+- 残留文件
+- 资源抢占
+- 环境抖动
+
+而不是 agent 真实能力。
+
+### 7. 读 transcript，不要只看分数
+分数能告诉你“出问题了”，但往往不能告诉你“为什么出问题”。
+
+真正有价值的动作通常是：
+- 找低分样本
+- 读 transcript
+- 区分是任务问题、grader 问题、环境问题，还是 agent 问题
+
+很多“模型退化”最后都会被发现其实是：
+- grader 写错
+- task 规格模糊
+- harness 不稳定
+- 合法解被评分器错杀
+
+### 8. 把 eval 变成持续机制
+好的 eval 不是一次性项目，而是活文档（living artifact）。
+
+更稳的维护方式通常是：
+- 核心基础设施有人负责
+- 任务由最懂业务的人持续补
+- 每次新能力开发时，就同时补相应 eval
+- 模型升级时先跑整套评估，再决定是否切换
+
+## 一套够用的最小落地方案（minimum viable eval stack）
+如果现在就要开始做，而不是写完整平台，我建议从这个最小组合开始：
+
+### 1. 一个任务集
+- 先收 20 到 50 个真实任务
+- 用 markdown、json 或 yaml 管理都可以
+
+### 2. 一个运行脚本
+- 能批量跑 agent
+- 每条 task 记录结果、时间、成本、日志
+
+### 3. 一个 grader 层
+- 优先确定性检查
+- 必要时再加 LLM judge
+
+### 4. 一份 transcript 存档
+- 至少能回看失败任务的完整轨迹
+
+### 5. 两个分组
+- capability
+- regression
+
+只要先把这 5 个东西搭起来，就已经比“靠感觉改 agent”强很多。
+
+## 评估不是全部（evals plus other signals）
+自动化 eval 很重要，但它不是完整真相（ground truth）。
+
+更稳的做法是把它和这些信号放在一起看：
+- 生产监控（production monitoring）
+- A/B 测试（A/B testing）
+- 用户反馈（user feedback）
+- 人工 transcript review
+- 定期人工标注校准
+
+可以把它理解成“多层瑞士奶酪（Swiss cheese model）”：
+- 任意一层都会漏问题
+- 多层叠起来，系统才更稳
+
+## 对知识库 agent 来说怎么做
+如果我们要给这套知识库 agent 做 eval，我会建议先从最小闭环开始。
+
+### 1. 先定义 3 类任务
+- 摄入一篇来源并正确更新 wiki
+- 回答一个问题并给出可追溯依据
+- 对已有结构做整理但不破坏链接
+
+### 2. 再定义 4 类 grader
+- 链接是否完整
+- 是否引用到正确来源
+- 是否引入明显幻觉
+- 是否符合页面风格约束
+
+### 3. 最后读失败 transcript
+特别关注这些失败：
+- 明明有资料却找错页
+- 总结写得像，但来源不对
+- 结构整理时误删重要页
+- 更新过度，破坏原有知识网络
+
 ## 常见应对策略
 ### 1. 提高任务新颖性
 - 选择更偏分布外的问题（choose more out-of-distribution problems）
@@ -113,6 +322,7 @@ tags:
 
 ## 相关来源
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Designing AI-Resistant Technical Evaluations|2026-04-21 Anthropic Engineering - Designing AI-Resistant Technical Evaluations]]
+- [[wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents|2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents]]
 
 ## 张力与开放问题
 - 未来是否存在既真实、又公平、又抗AI的稳定评估？(Can a stable evaluation be realistic, fair, and AI-resistant at the same time?)
