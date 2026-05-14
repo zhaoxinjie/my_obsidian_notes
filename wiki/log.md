@@ -98,3 +98,10 @@ tags:
 - 新建来源页：`Anthropic Engineering - Demystifying Evals for AI Agents`
 - 补充了更可操作的 eval 落地方法
 - 更新 `wiki/index.md`
+
+## [2026-05-14] discuss+ingest | Spider 2.0 and warehouse planning
+- 新建来源页：`Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows`
+- 新建综合页：`企业数仓 Text-to-SQL Agent 落地清单`
+- 新建综合页：`企业数仓 Text-to-SQL Agent 落地规划`
+- 将 Spider 2.0 的启发转译为面向数仓场景的实战建议
+- 更新 `wiki/index.md`

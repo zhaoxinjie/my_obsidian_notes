@@ -36,6 +36,7 @@ tags:
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use|2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use]] - 关于在大规模工具库中实现动态发现、按需加载与高级工具编排的文章
 - [[wiki/sources/2026-04-22 Anthropic Engineering - The Think Tool|2026-04-22 Anthropic Engineering - The Think Tool]] - 关于在复杂工具链里给模型增加显式中间思考步骤的文章
 - [[wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents|2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents]] - 关于 agent eval 的基本结构、harness、grader、capability/regression 区分与落地路线
+- [[wiki/sources/2026-05-14 Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows|2026-05-14 Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows]] - 关于真实企业 `text-to-SQL workflow` benchmark、复杂 schema、方言、代码库和执行反馈的论文
 
 ## 概念页
 - [[wiki/concepts/LLM Wiki|LLM Wiki]] - 用 LLM 持续维护、而非每次临时检索的知识库模式
@@ -56,3 +57,5 @@ tags:
 
 ## 综合页
 - [[wiki/syntheses/agent 工程地图|agent 工程地图（agent engineering map）]] - 把当前知识库里的 agent 相关文章整理成 6 层结构地图
+- [[wiki/syntheses/企业数仓 Text-to-SQL Agent 落地清单|企业数仓 Text-to-SQL Agent 落地清单]] - 面向数仓场景的短清单，聚焦现在就该做的基础建设
+- [[wiki/syntheses/企业数仓 Text-to-SQL Agent 落地规划|企业数仓 Text-to-SQL Agent 落地规划]] - 面向数仓 `text-to-SQL agent` 的分阶段落地方案
