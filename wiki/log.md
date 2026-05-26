@@ -105,3 +105,9 @@ tags:
 - 新建综合页：`企业数仓 Text-to-SQL Agent 落地规划`
 - 将 Spider 2.0 的启发转译为面向数仓场景的实战建议
 - 更新 `wiki/index.md`
+
+## [2026-05-23] discuss+ingest | The Founders Playbook and AI-native startup branch
+- 新建来源页：`Anthropic - The Founders Playbook: Building an AI-Native Startup`
+- 新建综合页：`AI-native 创业`
+- 将其定位为一条独立支线，而不是并入 agent 工程主线
+- 更新 `wiki/index.md`
