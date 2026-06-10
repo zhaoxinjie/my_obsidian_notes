@@ -2,8 +2,8 @@
 type: concept
 status: active
 created: 2026-04-21
-updated: 2026-04-22
-source_count: 2
+updated: 2026-06-09
+source_count: 3
 tags:
   - concept
   - evaluation
@@ -233,6 +233,17 @@ agent eval 很容易被“不是 agent 本身的问题”污染，所以 harness
 - 每次新能力开发时，就同时补相应 eval
 - 模型升级时先跑整套评估，再决定是否切换
 
+### 9. 对复杂任务使用 workflow eval
+当任务不是一次调用能完成，而是包含检索、工具调用、修改环境、验证结果和多轮纠错时，可以把 eval 本身做成动态工作流（dynamic workflow）。
+
+典型结构是：
+- 每个 trial 在隔离环境或独立 worktree 中运行
+- 执行代理负责完成任务
+- 比较代理或评分代理根据 rubric 审查结果
+- 外层 harness 保存 transcript、环境 diff、评分和失败原因
+
+这种做法尤其适合评估 agent skill、代码迁移、深度研究、数据分析和知识库维护任务。它的优点是更接近真实工作流，缺点是成本更高、变量更多，因此需要明确 token 预算和停止条件。
+
 ## 一套够用的最小落地方案（minimum viable eval stack）
 如果现在就要开始做，而不是写完整平台，我建议从这个最小组合开始：
 
@@ -323,6 +334,7 @@ agent eval 很容易被“不是 agent 本身的问题”污染，所以 harness
 ## 相关来源
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Designing AI-Resistant Technical Evaluations|2026-04-21 Anthropic Engineering - Designing AI-Resistant Technical Evaluations]]
 - [[wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents|2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents]]
+- [[wiki/sources/2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code|2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code]]
 
 ## 张力与开放问题
 - 未来是否存在既真实、又公平、又抗AI的稳定评估？(Can a stable evaluation be realistic, fair, and AI-resistant at the same time?)

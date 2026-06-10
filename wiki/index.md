@@ -2,7 +2,7 @@
 type: overview
 status: active
 created: 2026-04-21
-updated: 2026-04-21
+updated: 2026-06-09
 tags:
   - index
 ---
@@ -38,6 +38,7 @@ tags:
 - [[wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents|2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents]] - 关于 agent eval 的基本结构、harness、grader、capability/regression 区分与落地路线
 - [[wiki/sources/2026-05-14 Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows|2026-05-14 Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows]] - 关于真实企业 `text-to-SQL workflow` benchmark、复杂 schema、方言、代码库和执行反馈的论文
 - [[wiki/sources/2026-05-23 Anthropic - The Founders Playbook Building an AI-Native Startup|2026-05-23 Anthropic - The Founders Playbook: Building an AI-Native Startup]] - 关于如何从第一天按 AI-native 方式构建创业公司的手册
+- [[wiki/sources/2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code|2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code]] - 关于 Claude Code 动态工作流如何按任务生成多代理 harness，并用编排结构对抗懒惰收尾、自我偏差和目标漂移
 
 ## 概念页
 - [[wiki/concepts/LLM Wiki|LLM Wiki]] - 用 LLM 持续维护、而非每次临时检索的知识库模式

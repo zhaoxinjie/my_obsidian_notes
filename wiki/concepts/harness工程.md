@@ -2,8 +2,8 @@
 type: concept
 status: active
 created: 2026-04-21
-updated: 2026-04-21
-source_count: 1
+updated: 2026-06-09
+source_count: 3
 tags:
   - concept
   - agent
@@ -35,6 +35,7 @@ tags:
 - 一个好的 harness 会把“进度、目标、运行方式、验证方法”都外化成明确工件。
 - 长时运行系统的关键，不是让模型永远记住，而是让它每次都能快速重新进入有效工作状态。
 - 当任务进一步变长、变复杂时，harness 不只要解决连续性，还要解决自我评估偏乐观的问题。
+- harness 既可以是预先设计的静态外壳，也可以是按任务临时生成的动态工作流（dynamic workflow）。
 
 ## 我们目前对它的四个关键判断
 ### 1. 它补充了 harness工程的第二类核心失败源
@@ -109,6 +110,11 @@ tags:
 - 对高层目标和可验证实现之间的落差，最好先用一份阶段合同来桥接
 - 如果没有明确的验收条件，智能体很容易在错误方向上持续推进
 
+### 8. 动态编排
+- 对复杂任务，harness 可以临时生成一段工作流脚本，而不是永远复用同一个固定流程
+- 这段脚本负责拆分任务、启动子代理、选择模型、隔离 worktree、收集结果和判断停止条件
+- 动态编排适合高价值、长链路、结构复杂或需要强验证的任务，不适合普通小任务
+
 ## 设计原则
 ### 1. 把记忆外化
 - 不把连续性完全依赖在上下文窗口里
@@ -151,16 +157,49 @@ tags:
 
 不过这也会带来更高的编排成本、token 开销和运行延迟，因此只有在高价值、长周期、单代理明显失稳的任务里才值得采用。
 
+## 动态工作流（dynamic workflows）
+动态工作流把 harness 从“固定工程外壳（static harness）”推进到“按任务生成的执行结构（task-specific execution structure）”。模型不只是执行任务，也可以先写一段 JavaScript workflow，用它来协调多个子代理。
+
+```mermaid
+flowchart LR
+  A["用户目标"] --> B["动态 workflow / harness"]
+  B --> C["分类与拆分"]
+  C --> D["执行子代理"]
+  C --> E["研究子代理"]
+  C --> F["验证子代理"]
+  D --> G["综合与合并"]
+  E --> G
+  F --> G
+  G --> H["结果 / 继续循环 / 打回"]
+```
+
+这类结构主要对抗三类长任务失败：
+- 代理惰性（agentic laziness）：任务还没真正做完就宣布完成
+- 自我偏好偏差（self-preferential bias）：模型偏爱自己刚生成的结论
+- 目标漂移（goal drift）：上下文变长和压缩后，原始目标逐渐丢失
+
+常见模式包括：
+- 分类后执行（classify-and-act）：先判断任务类型，再分派到不同路径
+- 扇出后综合（fan-out-and-synthesize）：并行处理许多小块，再统一合并
+- 对抗式验证（adversarial verification）：让独立代理按 rubric 审查产出
+- 生成后过滤（generate-and-filter）：先扩大候选池，再筛选和去重
+- 锦标赛（tournament）：多个代理竞争同一任务，再成对比较选优
+- 循环直到完成（loop-until-done）：用停止条件替代固定轮数
+
+一个实用判断标准是：如果任务需要独立上下文、并行探索、对抗验证或明确停止条件，就值得考虑动态 workflow；如果只是普通代码修改或单步信息整理，动态 workflow 往往只是昂贵的复杂化。
+
 ## 从早期 harness 到进阶 harness 的变化
 如果把这个主题放在时间线上理解，可以把它看成两次升级：
 
 - 早期 harness 重点解决：如何跨 session 交接、如何让任务持续推进
 - 进阶 harness 进一步解决：如何减少自评偏差、如何在长任务中持续纠偏
+- 动态 harness 继续推进：如何为每类任务临时生成最合适的子代理拓扑和验证流程
 
 因此，harness工程的演进方向大致是：
 - 从“连续性工程”走向“连续性 + 评估工程”
 - 从“保持任务不断”走向“保持任务不断且方向正确”
 - 从“单代理依赖上下文”走向“外部工件 + 角色分离 + 显式验收”
+- 从“固定流程”走向“按任务生成流程”
 
 ## 与其他概念的关系
 - 它是 [[wiki/concepts/构建高效智能体|构建高效智能体（Building Effective Agents）]] 的延伸，更关注“长时运行”场景下的工程实现。
@@ -171,6 +210,7 @@ tags:
 ## 相关来源
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents|2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents]]
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development|2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development]]
+- [[wiki/sources/2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code|2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code]]
 
 ## 适合迁移到哪些场景
 - 长周期编码代理
@@ -184,3 +224,4 @@ tags:
 - progress file、目标清单和 git 历史三者的最佳分工是什么？
 - 当任务不是代码工程时，harness 应该如何改造？
 - 生成与评估分离带来的质量提升，是否足以覆盖新增的运行成本？
+- 动态 workflow 什么时候会真正提升质量，什么时候只是把简单任务复杂化？

@@ -111,3 +111,10 @@ tags:
 - 新建综合页：`AI-native 创业`
 - 将其定位为一条独立支线，而不是并入 agent 工程主线
 - 更新 `wiki/index.md`
+
+## [2026-06-09] ingest | A Harness for Every Task: Dynamic Workflows in Claude Code
+- 将 `claude_dynamic_workflows_article.pdf` 归档到 `raw/assets/`
+- 新建来源页：`Claude - A Harness for Every Task Dynamic Workflows in Claude Code`
+- 将动态工作流综合进 `harness工程`，补充任务专属 harness、子代理编排、失败模式与适用边界
+- 轻量更新 `AI评估` 与 `工具`，明确 workflow eval 与工具上层编排的关系
+- 更新 `agent 工程地图` 与 `wiki/index.md`
