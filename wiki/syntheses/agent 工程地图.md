@@ -2,8 +2,8 @@
 type: synthesis
 status: active
 created: 2026-04-21
-updated: 2026-06-09
-source_count: 10
+updated: 2026-06-10
+source_count: 11
 tags:
   - synthesis
   - agent
@@ -20,7 +20,7 @@ tags:
 - 这些层之间是什么关系？
 
 ## 一张简化地图
-可以先把当前结构粗略理解成 6 层：
+可以先把当前结构粗略理解成 7 层：
 
 1. 方法论层（methodology）
 2. 信息流层（context and retrieval）
@@ -28,6 +28,7 @@ tags:
 4. 协议与生态层（protocol and ecosystem）
 5. 长时运行层（long-running execution）
 6. 评估层（evaluation）
+7. 安全与演化层（safety and evolution）
 
 ## 1. 方法论层（methodology）
 这一层讨论：什么时候该使用 agent，复杂度应该如何控制，系统设计应优先追求什么。
@@ -114,6 +115,20 @@ tags:
 
 如果一篇文章主要在讨论“怎么验证能力和系统是否真的好”，通常属于这一层。
 
+## 7. 安全与演化层（safety and evolution）
+这一层讨论：当 agent 会长期运行、积累记忆、创建工具、优化 workflow，甚至更新模型时，系统如何避免在自我改进中变坏。
+
+对应页面：
+- [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]]
+
+这一层的核心问题包括：
+- agent 自修改之后是否仍然安全
+- 记忆、工具、workflow 的演化是否引入新风险
+- 如何给自演化系统做版本化、审计、回滚和持续安全评估
+- 如何避免能力优化把安全边界优化掉
+
+如果一篇文章主要在讨论“self-evolving agents”“agent safety”“memory/tool/workflow evolution risk”，通常属于这一层。
+
 ## 层与层之间的关系
 这些层不是并列孤岛，它们更像从内到外逐渐展开：
 
@@ -123,10 +138,12 @@ tags:
 - 协议与生态层决定系统“能接多大世界”
 - 长时运行层决定系统“能持续工作多久、如何稳定推进”
 - 评估层决定我们“怎么知道它是否真的有效”
+- 安全与演化层决定系统“变强之后是否仍然可信”
 
 可以把它压缩成一句话：
 - 方法论决定方向，信息流决定认知，工具决定动作，协议决定规模，harness 决定持续性，评估决定真假
 - 进一步说，动态 harness 决定复杂任务应该如何分身、并行、验证和停止
+- 自演化安全决定系统是否能在持续变化中不越界
 
 ## 如何使用这张地图
 以后每当你摄入一篇新文章，可以先问 3 个问题：
@@ -172,3 +189,4 @@ tags:
 - [[wiki/concepts/MCP|MCP（Model Context Protocol）]]
 - [[wiki/concepts/harness工程|harness工程]]
 - [[wiki/concepts/AI评估|AI评估]]
+- [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]]

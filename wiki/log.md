@@ -118,3 +118,12 @@ tags:
 - 将动态工作流综合进 `harness工程`，补充任务专属 harness、子代理编排、失败模式与适用边界
 - 轻量更新 `AI评估` 与 `工具`，明确 workflow eval 与工具上层编排的关系
 - 更新 `agent 工程地图` 与 `wiki/index.md`
+
+## [2026-06-10] ingest | Your Agent May Misevolve
+- 将 `2509.26354v2.pdf` 归档到 `raw/assets/`
+- 新建来源页：`Shao et al - Your Agent May Misevolve`
+- 新建概念页：`自演化智能体风险（Misevolution）`
+- 将论文的模型、记忆、工具、workflow 四条演化风险整理为 agent 安全主线
+- 更新 `工具`、`MCP`、`AI评估`、`harness工程` 的相关风险与治理链接
+- 将 `agent 工程地图` 从 6 层扩展为 7 层，新增安全与演化层
+- 更新 `wiki/index.md`

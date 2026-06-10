@@ -2,8 +2,8 @@
 type: concept
 status: active
 created: 2026-04-21
-updated: 2026-06-09
-source_count: 3
+updated: 2026-06-10
+source_count: 4
 tags:
   - concept
   - evaluation
@@ -244,6 +244,17 @@ agent eval 很容易被“不是 agent 本身的问题”污染，所以 harness
 
 这种做法尤其适合评估 agent skill、代码迁移、深度研究、数据分析和知识库维护任务。它的优点是更接近真实工作流，缺点是成本更高、变量更多，因此需要明确 token 预算和停止条件。
 
+### 10. 对自演化系统做演化前后评估
+如果 agent 会更新模型、记忆、工具或 workflow，评估就不能只测当前版本，而要测“更新前后是否退化”。
+
+最低要求是：
+- 每次 self-update 前后都跑同一套 capability eval 和 safety regression eval
+- 把模型、记忆、工具、workflow 的版本号和评估结果绑定
+- 对拒答率、攻击成功率、工具安全率、隐私泄漏率等安全指标做趋势监控
+- 如果能力分上涨但安全分下降，不能自动上线，需要人工 review 或回滚
+
+这类评估的目标不是证明 agent 一次性安全，而是证明它在持续变动中没有把安全边界演化掉。
+
 ## 一套够用的最小落地方案（minimum viable eval stack）
 如果现在就要开始做，而不是写完整平台，我建议从这个最小组合开始：
 
@@ -335,6 +346,7 @@ agent eval 很容易被“不是 agent 本身的问题”污染，所以 harness
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Designing AI-Resistant Technical Evaluations|2026-04-21 Anthropic Engineering - Designing AI-Resistant Technical Evaluations]]
 - [[wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents|2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents]]
 - [[wiki/sources/2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code|2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code]]
+- [[wiki/sources/2026-03-08 Shao et al - Your Agent May Misevolve|2026-03-08 Shao et al - Your Agent May Misevolve]]
 
 ## 张力与开放问题
 - 未来是否存在既真实、又公平、又抗AI的稳定评估？(Can a stable evaluation be realistic, fair, and AI-resistant at the same time?)

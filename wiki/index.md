@@ -2,7 +2,7 @@
 type: overview
 status: active
 created: 2026-04-21
-updated: 2026-06-09
+updated: 2026-06-10
 tags:
   - index
 ---
@@ -24,6 +24,7 @@ tags:
 - [[wiki/syntheses/README|综合页说明]] - 多来源综合分析页的定位
 
 ## 来源页
+- [[wiki/sources/2026-03-08 Shao et al - Your Agent May Misevolve|2026-03-08 Shao et al - Your Agent May Misevolve]] - 关于自演化智能体在模型、记忆、工具和 workflow 四条路径上出现安全退化与非预期风险的 ICLR 2026 论文
 - [[wiki/sources/2026-04-21 Karpathy - LLM Wiki|2026-04-21 Karpathy - LLM Wiki]] - Karpathy 提出的 LLM 维护型 wiki 方法论来源页
 - [[wiki/sources/2026-04-21 Anthropic - Building Effective Agents|2026-04-21 Anthropic - Building Effective Agents]] - 关于何时使用工作流或智能体，以及如何用最小复杂度构建有效 agent 的实践文章
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents|2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents]] - 关于长时运行智能体如何通过工程外壳保持连续性、增量推进与干净交接的文章
@@ -49,6 +50,7 @@ tags:
 - [[wiki/concepts/工具|工具（tool）]] - 连接 agent 与外部世界的行动契约，以及面向 agent 的工具设计原则
 - [[wiki/concepts/AI评估|AI评估]] - 在 AI 时代设计仍有区分度、可代表真实能力的评估方法
 - [[wiki/concepts/MCP|MCP（Model Context Protocol）]] - 让 agent 与大量外部工具和资源建立标准化连接的协议层
+- [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]] - 研究 agent 在自我更新模型、记忆、工具和 workflow 后如何出现安全退化、目标漂移和工具风险
 
 ## 实体页
 - [[wiki/entities/Andrej Karpathy|Andrej Karpathy]] - 提出该模式的研究者与工程师
@@ -58,7 +60,7 @@ tags:
 - 暂无问题归档
 
 ## 综合页
-- [[wiki/syntheses/agent 工程地图|agent 工程地图（agent engineering map）]] - 把当前知识库里的 agent 相关文章整理成 6 层结构地图
+- [[wiki/syntheses/agent 工程地图|agent 工程地图（agent engineering map）]] - 把当前知识库里的 agent 相关文章整理成 7 层结构地图
 - [[wiki/syntheses/企业数仓 Text-to-SQL Agent 落地清单|企业数仓 Text-to-SQL Agent 落地清单]] - 面向数仓场景的短清单，聚焦现在就该做的基础建设
 - [[wiki/syntheses/企业数仓 Text-to-SQL Agent 落地规划|企业数仓 Text-to-SQL Agent 落地规划]] - 面向数仓 `text-to-SQL agent` 的分阶段落地方案
 - [[wiki/syntheses/AI-native 创业|AI-native 创业]] - 围绕 AI-native startup、创始人角色变化与公司构建方式的新支线

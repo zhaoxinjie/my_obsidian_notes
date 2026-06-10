@@ -2,8 +2,8 @@
 type: concept
 status: active
 created: 2026-04-21
-updated: 2026-06-09
-source_count: 3
+updated: 2026-06-10
+source_count: 4
 tags:
   - concept
   - agent
@@ -115,6 +115,11 @@ tags:
 - 这段脚本负责拆分任务、启动子代理、选择模型、隔离 worktree、收集结果和判断停止条件
 - 动态编排适合高价值、长链路、结构复杂或需要强验证的任务，不适合普通小任务
 
+### 9. 自修改治理
+- 如果 agent 会修改记忆、工具、prompt、workflow 或模型参数，harness 必须记录每次变更
+- 变更不能直接进入生产路径，应先经过评估、审计和必要时人工确认
+- 好的 harness 应该支持版本化、回滚和演化前后对比，而不是只追求持续推进
+
 ## 设计原则
 ### 1. 把记忆外化
 - 不把连续性完全依赖在上下文窗口里
@@ -211,6 +216,7 @@ flowchart LR
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents|2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents]]
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development|2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development]]
 - [[wiki/sources/2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code|2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code]]
+- [[wiki/sources/2026-03-08 Shao et al - Your Agent May Misevolve|2026-03-08 Shao et al - Your Agent May Misevolve]]
 
 ## 适合迁移到哪些场景
 - 长周期编码代理
