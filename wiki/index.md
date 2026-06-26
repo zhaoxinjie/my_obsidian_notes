@@ -2,7 +2,7 @@
 type: overview
 status: active
 created: 2026-04-21
-updated: 2026-06-10
+updated: 2026-06-26
 tags:
   - index
 ---
@@ -24,6 +24,7 @@ tags:
 - [[wiki/syntheses/README|综合页说明]] - 多来源综合分析页的定位
 
 ## 来源页
+- [[wiki/sources/1986 Brooks - No Silver Bullet|1986 Brooks - No Silver Bullet]] - Fred Brooks 关于软件工程没有“银弹”、本质复杂度与偶然复杂度的经典文章
 - [[wiki/sources/2026-03-08 Shao et al - Your Agent May Misevolve|2026-03-08 Shao et al - Your Agent May Misevolve]] - 关于自演化智能体在模型、记忆、工具和 workflow 四条路径上出现安全退化与非预期风险的 ICLR 2026 论文
 - [[wiki/sources/2026-04-21 Karpathy - LLM Wiki|2026-04-21 Karpathy - LLM Wiki]] - Karpathy 提出的 LLM 维护型 wiki 方法论来源页
 - [[wiki/sources/2026-04-21 Anthropic - Building Effective Agents|2026-04-21 Anthropic - Building Effective Agents]] - 关于何时使用工作流或智能体，以及如何用最小复杂度构建有效 agent 的实践文章
@@ -51,9 +52,11 @@ tags:
 - [[wiki/concepts/AI评估|AI评估]] - 在 AI 时代设计仍有区分度、可代表真实能力的评估方法
 - [[wiki/concepts/MCP|MCP（Model Context Protocol）]] - 让 agent 与大量外部工具和资源建立标准化连接的协议层
 - [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]] - 研究 agent 在自我更新模型、记忆、工具和 workflow 后如何出现安全退化、目标漂移和工具风险
+- [[wiki/concepts/软件工程|软件工程]] - 围绕需求、架构、复杂度、协作与维护的工程学科，其中包含“没有银弹”与本质复杂度判断
 
 ## 实体页
 - [[wiki/entities/Andrej Karpathy|Andrej Karpathy]] - 提出该模式的研究者与工程师
+- [[wiki/entities/Fred Brooks|Fred Brooks]] - 《The Mythical Man-Month》作者，软件工程“没有银弹”思想的提出者
 - [[wiki/entities/张一鸣|张一鸣]] - 作为人物研究对象建立的长期观察页
 
 ## 问题页

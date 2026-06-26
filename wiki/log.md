@@ -127,3 +127,16 @@ tags:
 - 更新 `工具`、`MCP`、`AI评估`、`harness工程` 的相关风险与治理链接
 - 将 `agent 工程地图` 从 6 层扩展为 7 层，新增安全与演化层
 - 更新 `wiki/index.md`
+
+## [2026-06-26] ingest | No Silver Bullet
+- 下载并归档 Fred Brooks `No Silver Bullet` PDF 到 `raw/assets/Brooks-NoSilverBullet.pdf`
+- 新建来源页：`1986 Brooks - No Silver Bullet`
+- 新建概念页：`没有银弹`
+- 新建实体页：`Fred Brooks`
+- 将“本质复杂度 / 偶然复杂度”补充进 `构建高效智能体`，用于解释 AI agent 为什么不是软件工程银弹
+- 更新 `wiki/index.md`
+
+## [2026-06-26] refactor | 软件工程概念页
+- 将概念页 `没有银弹` 重命名并扩展为 `软件工程`
+- 把“没有银弹”调整为 `软件工程` 下的一章，便于后续继续沉淀架构、复杂度和工程管理内容
+- 更新相关双链、`wiki/index.md` 和来源页引用
