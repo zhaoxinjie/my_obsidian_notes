@@ -11,14 +11,12 @@
             "id": "d3a8c20974aecaf3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "wiki/syntheses/企业数仓 Text-to-SQL Agent 落地规划.md",
-                "mode": "source",
-                "source": false
+                "file": "raw/assets/Brooks-NoSilverBullet.pdf"
               },
-              "icon": "lucide-file",
-              "title": "企业数仓 Text-to-SQL Agent 落地规划"
+              "icon": "lucide-file-text",
+              "title": "Brooks-NoSilverBullet"
             }
           }
         ]
@@ -186,6 +184,7 @@
   },
   "active": "d3a8c20974aecaf3",
   "lastOpenFiles": [
+    "wiki/syntheses/企业数仓 Text-to-SQL Agent 落地规划.md",
     "raw/sources/README.md",
     "wiki/concepts/个人知识库.md",
     "wiki/syntheses/AI-native 创业.md",
@@ -193,7 +192,6 @@
     "raw/assets/The Founders Playbook Building an AINative Startup.pdf",
     "wiki/concepts/构建高效智能体.md",
     "wiki/syntheses/企业数仓 Text-to-SQL Agent 落地清单.md",
-    "wiki/syntheses/企业数仓 Text-to-SQL Agent 落地规划.md",
     "wiki/concepts/AI评估.md",
     "wiki/concepts/工具.md",
     "wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents.md",
