@@ -2,8 +2,8 @@
 type: synthesis
 status: active
 created: 2026-04-21
-updated: 2026-06-10
-source_count: 11
+updated: 2026-07-09
+source_count: 14
 tags:
   - synthesis
   - agent
@@ -20,7 +20,7 @@ tags:
 - 这些层之间是什么关系？
 
 ## 一张简化地图
-可以先把当前结构粗略理解成 7 层：
+可以先把当前结构粗略理解成 9 层：
 
 1. 方法论层（methodology）
 2. 信息流层（context and retrieval）
@@ -29,6 +29,8 @@ tags:
 5. 长时运行层（long-running execution）
 6. 评估层（evaluation）
 7. 安全与演化层（safety and evolution）
+8. 自我改进与优化层（self-improvement and optimization）
+9. 推理计算层（reasoning and test-time compute）
 
 ## 1. 方法论层（methodology）
 这一层讨论：什么时候该使用 agent，复杂度应该如何控制，系统设计应优先追求什么。
@@ -40,6 +42,7 @@ tags:
 - 是否真的需要 agent
 - 什么时候 workflow 就足够
 - 为什么要从简单方案开始
+- 早期 agent 基础结构：planning、memory、tool use
 
 如果一篇文章主要在讨论“该不该这样设计系统”，通常属于这一层。
 
@@ -54,6 +57,7 @@ tags:
 - 什么信息应该延迟加载（just-in-time context）
 - 如何压缩历史
 - 如何通过 contextual retrieval 提高检索质量
+- 长期记忆如何在 recency、importance、relevance 之间权衡
 
 如果一篇文章主要在讨论“信息怎么进入模型工作记忆”，通常属于这一层。
 
@@ -68,6 +72,7 @@ tags:
 - 工具边界如何划分
 - 返回值该怎么设计
 - 参数名、描述、错误信息如何帮助 agent 正确使用工具
+- agent 是只能调用给定工具，还是能检索、学习和组合多个工具
 
 如果一篇文章主要在讨论“agent 怎么做事、工具怎么设计”，通常属于这一层。
 
@@ -129,6 +134,41 @@ tags:
 
 如果一篇文章主要在讨论“self-evolving agents”“agent safety”“memory/tool/workflow evolution risk”，通常属于这一层。
 
+## 8. 自我改进与优化层（self-improvement and optimization）
+这一层讨论：当 agent 不只是执行任务，而是开始优化自己的上下文、workflow、harness code，甚至 optimizer code 时，系统应该如何组织搜索空间、评估候选和治理合并。
+
+对应页面：
+- [[wiki/concepts/harness工程|harness工程]]
+- [[wiki/concepts/上下文工程|上下文工程（context engineering）]]
+- [[wiki/concepts/AI评估|AI评估]]
+- [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]]
+
+这一层的核心问题包括：
+- prompt、context、workflow、harness code 哪些可以被优化
+- 如何从失败 trace 中挖掘可修复的 weakness
+- 如何用 held-in / held-out 验证候选改动
+- 权限、安全、审计和评估层如何保持在自修改 loop 外
+- 文件系统如何作为持久工作区，而不是变成无治理的长期记忆垃圾堆
+
+如果一篇文章主要在讨论“harness optimization”“Self-Harness”“Meta-Harness”“workflow search”“recursive self-improvement”，通常属于这一层。
+
+## 9. 推理计算层（reasoning and test-time compute）
+这一层讨论：模型或 agent 在推理时如何分配额外计算，什么时候多想、什么时候并行采样、什么时候顺序修订、什么时候调用工具验证。
+
+对应页面：
+- [[wiki/concepts/测试时计算|测试时计算（test-time compute）]]
+- [[wiki/concepts/harness工程|harness工程]]
+- [[wiki/concepts/AI评估|AI评估]]
+
+这一层的核心问题包括：
+- CoT 为什么能提升能力
+- thinking budget 如何按任务难度分配
+- parallel sampling 与 sequential revision 如何取舍
+- CoT 是否忠实，如何避免把 CoT 当真相
+- loop 如何成为 agent 外部的 test-time compute
+
+如果一篇文章主要在讨论“reasoning model”“CoT”“test-time compute”“thinking tokens”“self-correction”，通常属于这一层。
+
 ## 层与层之间的关系
 这些层不是并列孤岛，它们更像从内到外逐渐展开：
 
@@ -139,11 +179,15 @@ tags:
 - 长时运行层决定系统“能持续工作多久、如何稳定推进”
 - 评估层决定我们“怎么知道它是否真的有效”
 - 安全与演化层决定系统“变强之后是否仍然可信”
+- 自我改进与优化层决定系统“如何在受控边界内变强”
+- 推理计算层决定系统“回答前应该怎样花计算”
 
 可以把它压缩成一句话：
 - 方法论决定方向，信息流决定认知，工具决定动作，协议决定规模，harness 决定持续性，评估决定真假
 - 进一步说，动态 harness 决定复杂任务应该如何分身、并行、验证和停止
 - 自演化安全决定系统是否能在持续变化中不越界
+- 自我改进优化决定系统能否把失败转化为受控候选改动，而不是自由漂移
+- 推理计算决定模型和 agent 是一次性拍答案，还是通过搜索、验证和修正逐步靠近答案
 
 ## 如何使用这张地图
 以后每当你摄入一篇新文章，可以先问 3 个问题：
@@ -173,7 +217,7 @@ tags:
 - 把跨文章的判断逐渐沉淀为稳定页面
 
 ## 后续可能会继续长出来的层
-当前地图已经有 6 层，但未来很可能还会补出更多层，例如：
+当前地图已经有 9 层，但未来很可能还会补出更多层，例如：
 - 安全与权限（security and permissions）
 - 多代理协作（multi-agent collaboration）
 - 记忆（memory）
@@ -190,3 +234,4 @@ tags:
 - [[wiki/concepts/harness工程|harness工程]]
 - [[wiki/concepts/AI评估|AI评估]]
 - [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]]
+- [[wiki/concepts/测试时计算|测试时计算（test-time compute）]]

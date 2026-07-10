@@ -2,7 +2,7 @@
 type: overview
 status: active
 created: 2026-04-21
-updated: 2026-06-26
+updated: 2026-07-09
 tags:
   - index
 ---
@@ -25,6 +25,8 @@ tags:
 
 ## 来源页
 - [[wiki/sources/1986 Brooks - No Silver Bullet|1986 Brooks - No Silver Bullet]] - Fred Brooks 关于软件工程没有“银弹”、本质复杂度与偶然复杂度的经典文章
+- [[wiki/sources/2023-06-23 Lilian Weng - LLM Powered Autonomous Agents|2023-06-23 Lilian Weng - LLM Powered Autonomous Agents]] - 关于 LLM agent 基础架构的经典综述，拆解 planning、memory 和 tool use 三大组件
+- [[wiki/sources/2025-05-01 Lilian Weng - Why We Think|2025-05-01 Lilian Weng - Why We Think]] - 关于 test-time compute、CoT、推理模型、工具辅助思考和 CoT 忠实性的系统综述
 - [[wiki/sources/2026-03-08 Shao et al - Your Agent May Misevolve|2026-03-08 Shao et al - Your Agent May Misevolve]] - 关于自演化智能体在模型、记忆、工具和 workflow 四条路径上出现安全退化与非预期风险的 ICLR 2026 论文
 - [[wiki/sources/2026-04-21 Karpathy - LLM Wiki|2026-04-21 Karpathy - LLM Wiki]] - Karpathy 提出的 LLM 维护型 wiki 方法论来源页
 - [[wiki/sources/2026-04-21 Anthropic - Building Effective Agents|2026-04-21 Anthropic - Building Effective Agents]] - 关于何时使用工作流或智能体，以及如何用最小复杂度构建有效 agent 的实践文章
@@ -41,6 +43,7 @@ tags:
 - [[wiki/sources/2026-05-14 Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows|2026-05-14 Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows]] - 关于真实企业 `text-to-SQL workflow` benchmark、复杂 schema、方言、代码库和执行反馈的论文
 - [[wiki/sources/2026-05-23 Anthropic - The Founders Playbook Building an AI-Native Startup|2026-05-23 Anthropic - The Founders Playbook: Building an AI-Native Startup]] - 关于如何从第一天按 AI-native 方式构建创业公司的手册
 - [[wiki/sources/2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code|2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code]] - 关于 Claude Code 动态工作流如何按任务生成多代理 harness，并用编排结构对抗懒惰收尾、自我偏差和目标漂移
+- [[wiki/sources/2026-07-04 Lilian Weng - Harness Engineering for Self-Improvement|2026-07-04 Lilian Weng - Harness Engineering for Self-Improvement]] - 关于 harness 如何作为递归自我改进的近期路径，优化上下文、workflow、harness code 和评估 loop
 
 ## 概念页
 - [[wiki/concepts/LLM Wiki|LLM Wiki]] - 用 LLM 持续维护、而非每次临时检索的知识库模式
@@ -53,6 +56,7 @@ tags:
 - [[wiki/concepts/MCP|MCP（Model Context Protocol）]] - 让 agent 与大量外部工具和资源建立标准化连接的协议层
 - [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]] - 研究 agent 在自我更新模型、记忆、工具和 workflow 后如何出现安全退化、目标漂移和工具风险
 - [[wiki/concepts/软件工程|软件工程]] - 围绕需求、架构、复杂度、协作与维护的工程学科，其中包含“没有银弹”与本质复杂度判断
+- [[wiki/concepts/测试时计算|测试时计算（test-time compute）]] - 解释模型和 agent 如何在推理时通过更多计算、搜索、验证和修正提升能力
 
 ## 实体页
 - [[wiki/entities/Andrej Karpathy|Andrej Karpathy]] - 提出该模式的研究者与工程师

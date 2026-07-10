@@ -13,10 +13,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "raw/assets/Brooks-NoSilverBullet.pdf"
+                "file": "raw/assets/harness-design-long-running-apps.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Brooks-NoSilverBullet"
+              "title": "harness-design-long-running-apps"
             }
           }
         ]
@@ -184,6 +184,7 @@
   },
   "active": "d3a8c20974aecaf3",
   "lastOpenFiles": [
+    "raw/assets/Brooks-NoSilverBullet.pdf",
     "wiki/syntheses/企业数仓 Text-to-SQL Agent 落地规划.md",
     "raw/sources/README.md",
     "wiki/concepts/个人知识库.md",
@@ -219,7 +220,6 @@
     "wiki/concepts/README.md",
     "wiki/concepts/LLM-based Agents.md",
     "wiki/questions/README.md",
-    "wiki/entities/README.md",
     "未命名.canvas"
   ]
 }

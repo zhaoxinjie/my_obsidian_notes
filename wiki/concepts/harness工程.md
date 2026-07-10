@@ -2,8 +2,8 @@
 type: concept
 status: active
 created: 2026-04-21
-updated: 2026-06-10
-source_count: 4
+updated: 2026-07-09
+source_count: 6
 tags:
   - concept
   - agent
@@ -36,6 +36,9 @@ tags:
 - 长时运行系统的关键，不是让模型永远记住，而是让它每次都能快速重新进入有效工作状态。
 - 当任务进一步变长、变复杂时，harness 不只要解决连续性，还要解决自我评估偏乐观的问题。
 - harness 既可以是预先设计的静态外壳，也可以是按任务临时生成的动态工作流（dynamic workflow）。
+- 近期更现实的自我改进（self-improvement）路径，可能不是模型直接改写自己权重，而是先让 harness、上下文、workflow、工具和评估系统变成可优化对象。
+- 文件系统更准确地说是持久工作区（persistent workspace），不是最终长期知识库。它适合保存轨迹、日志、产物和中间状态；长期知识必须经过治理后才能升格。
+- loop 可以看作 agent 外部的 [[wiki/concepts/测试时计算|测试时计算（test-time compute）]]：通过多轮计划、行动、观察和修正，把一次性输出变成可验证过程。
 
 ## 我们目前对它的四个关键判断
 ### 1. 它补充了 harness工程的第二类核心失败源
@@ -120,6 +123,21 @@ tags:
 - 变更不能直接进入生产路径，应先经过评估、审计和必要时人工确认
 - 好的 harness 应该支持版本化、回滚和演化前后对比，而不是只追求持续推进
 
+### 10. 持久工作区
+- 长任务不能把全部历史、日志和子代理输出都塞进上下文窗口
+- harness 应把执行轨迹、实验日志、代码 diff、错误 trace、子任务结果写入可检查的外部工作区
+- 但这些文件默认只是工作记忆，不是长期知识；需要垃圾回收、压缩、归档、去重和升格机制
+
+### 11. Harness 优化器
+- 当 harness 变成代码，prompt、上下文、workflow、工具调用、子代理结构和评估逻辑都可以进入搜索空间
+- 优化对象会从 `instruction prompts` 演进到 `structured context`、`workflow`、`harness code`，甚至 `optimizer code`
+- 这意味着 loop engineer 的工作不是写一句提示词，而是设计一个可运行、可评估、可改进的执行系统
+
+### 12. Thinking policy
+- harness 需要决定什么时候让模型多想，什么时候直接执行，什么时候调用工具验证
+- thinking budget 不能无限增长，应根据任务难度、风险和成本动态分配
+- 简单任务不需要复杂 loop；超出模型能力的任务也不能靠无限循环解决
+
 ## 设计原则
 ### 1. 把记忆外化
 - 不把连续性完全依赖在上下文窗口里
@@ -146,6 +164,16 @@ tags:
 - 每个阶段开始前，先约定目标、边界和验证方法
 - 这相当于给智能体一个局部、可测试的 done 定义
 - 它能减少高层需求过于模糊导致的跑偏
+
+### 7. 把文件当工作台，而不是垃圾桶
+- 允许 agent 落文件，是为了可恢复、可审计、可比较和可复现
+- 但每类文件都应有生命周期：临时草稿、运行日志、交付产物、候选记忆、正式知识不能混在一起
+- 没有过期、压缩、去重和升格机制的“长期记忆”，最后会变成上下文污染源
+
+### 8. 让自我改进受限发生
+- agent 可以提出 harness 改动候选，但不能自由修改权限、安全、审计和评估层
+- 自修改应优先针对反复出现、可定位、可窄改动修复的失败模式
+- 合并前必须经过 held-in 和 held-out 回归验证，避免修好一个点但破坏未知能力
 
 ## 进阶结构
 当任务规模继续上升时，harness 往往会从“单代理 + 外部工件”演化为“角色分离 + 多轮协作”。
@@ -193,18 +221,80 @@ flowchart LR
 
 一个实用判断标准是：如果任务需要独立上下文、并行探索、对抗验证或明确停止条件，就值得考虑动态 workflow；如果只是普通代码修改或单步信息整理，动态 workflow 往往只是昂贵的复杂化。
 
+## Prompt、loop 与 harness 的分工
+设计 agent 的“思考能力”不只是设计 prompt。prompt 只是局部指令，真正的工程对象是整个思考和行动过程。
+
+可以这样区分：
+- `prompt`：每一步怎么说，负责角色、目标、输入、输出格式和局部约束
+- `loop`：整件事怎么跑，负责计划、工具调用、观察反馈、修正、重试和停止
+- `harness`：让 loop 可控、可验证、可恢复，负责状态、权限、评估、日志、回滚和人工介入点
+
+例如数仓 SQL agent 如果只写 prompt，可能是“请认真生成 SQL”。如果设计 loop，则会变成：
+- 识别指标、维度、时间范围和过滤条件
+- 指标不清楚时查指标字典
+- 生成 SQL 草稿
+- dry-run SQL
+- 报错后根据错误信息修正，限制最大重试次数
+- 执行成功后检查结果行数、空值、时间范围和异常值
+- 涉及高风险口径时请求人工确认
+- 输出 SQL、证据、假设和风险点
+
+所以更稳定的结论是：prompt 教模型怎么说，loop 教系统怎么做事，harness 让这套做事过程可控、可验证、可恢复。
+
+## 自我改进型 harness
+Lilian Weng 的 `Harness Engineering for Self-Improvement` 把 harness工程进一步推向自我改进（self-improvement）主线：harness 不只是执行任务的外壳，也可以变成被优化的对象。
+
+最重要的演进线是：
+- `instruction prompts`：优化单次指令
+- `structured context`：优化模型每轮看到的信息结构
+- `workflow`：优化任务循环和控制流
+- `harness code`：优化驱动 agent 行动的运行时代码
+- `optimizer code`：优化用于搜索和改进 harness 的优化器本身
+
+这说明 prompt engineering 并没有消失，而是被吸收到更大的系统里。prompt 仍然重要，但它不再是唯一中心；真正的中心是一个能观察、行动、测试、记忆、回滚和被审计的 loop。
+
+### Self-Harness 的三步模式
+`Self-Harness` 给了一个比“自由自进化”更可落地的模式：
+- 弱点挖掘（weakness mining）：从执行轨迹里聚类失败模式，不只记录 timeout、missing artifact 这类表面错误，还要挖出背后的因果机制
+- 有边界的候选改动（bounded harness proposal）：只允许在明确可编辑面上提出小范围改动，并参考应保留的成功行为和历史失败改动
+- 候选验证（proposal validation）：用 held-in 检查原问题是否修复，用 held-out 检查是否引入未知回归，通过后才合并
+
+这个模式的核心不是“让 agent 自己改自己”，而是“让 agent 在受控沙箱里提出候选，外部评估和治理决定是否采纳”。
+
+### Harness 作为 agent 的身体
+如果模型是认知核心，harness 就是身体和神经系统：
+- 工具让模型行动
+- 文件系统让模型保留工作状态
+- 评估器让模型被现实纠偏
+- 权限系统限制模型能碰什么
+- trace 和日志让人能审计它为什么这样做
+
+因此，近期 agent 能力提升很可能来自“模型更聪明 + harness 更会使用模型”的共同进化，而不是只来自模型参数提升。
+
+### 持久工作区的治理
+把文件系统当记忆有一个明显风险：文件越来越多后会变成新的垃圾堆。更稳的分层是：
+- `scratch/`：临时草稿，任务结束可删除
+- `runs/`：执行轨迹、日志、评估结果，保留一段时间用于审计
+- `artifacts/`：有交付价值的产物
+- `candidate memory`：从多次执行中提炼出的候选经验
+- `curated knowledge`：经过审核后进入正式知识库或规则系统的长期知识
+
+所以，文件系统应被理解为 persistent workspace，而不是 permanent memory。它解决“不丢过程”，不自动解决“什么值得永久保存”。
+
 ## 从早期 harness 到进阶 harness 的变化
 如果把这个主题放在时间线上理解，可以把它看成两次升级：
 
 - 早期 harness 重点解决：如何跨 session 交接、如何让任务持续推进
 - 进阶 harness 进一步解决：如何减少自评偏差、如何在长任务中持续纠偏
 - 动态 harness 继续推进：如何为每类任务临时生成最合适的子代理拓扑和验证流程
+- 自我改进型 harness 进一步推进：如何把上下文、workflow、harness code 和 optimizer code 都变成可搜索、可验证、可治理的优化对象
 
 因此，harness工程的演进方向大致是：
 - 从“连续性工程”走向“连续性 + 评估工程”
 - 从“保持任务不断”走向“保持任务不断且方向正确”
 - 从“单代理依赖上下文”走向“外部工件 + 角色分离 + 显式验收”
 - 从“固定流程”走向“按任务生成流程”
+- 从“人手写提示词”走向“人设计边界，agent 搜索候选，评估系统决定合并”
 
 ## 与其他概念的关系
 - 它是 [[wiki/concepts/构建高效智能体|构建高效智能体（Building Effective Agents）]] 的延伸，更关注“长时运行”场景下的工程实现。
@@ -217,6 +307,8 @@ flowchart LR
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development|2026-04-21 Anthropic Engineering - Harness Design for Long-Running Application Development]]
 - [[wiki/sources/2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code|2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code]]
 - [[wiki/sources/2026-03-08 Shao et al - Your Agent May Misevolve|2026-03-08 Shao et al - Your Agent May Misevolve]]
+- [[wiki/sources/2026-07-04 Lilian Weng - Harness Engineering for Self-Improvement|2026-07-04 Lilian Weng - Harness Engineering for Self-Improvement]]
+- [[wiki/sources/2025-05-01 Lilian Weng - Why We Think|2025-05-01 Lilian Weng - Why We Think]]
 
 ## 适合迁移到哪些场景
 - 长周期编码代理

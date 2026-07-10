@@ -140,3 +140,33 @@ tags:
 - 将概念页 `没有银弹` 重命名并扩展为 `软件工程`
 - 把“没有银弹”调整为 `软件工程` 下的一章，便于后续继续沉淀架构、复杂度和工程管理内容
 - 更新相关双链、`wiki/index.md` 和来源页引用
+
+## [2026-07-09] ingest | Harness Engineering for Self-Improvement
+- 将 `harness_engineering_for_self_improvement.pdf` 归档到 `raw/assets/`
+- 新建来源页：`Lilian Weng - Harness Engineering for Self-Improvement`
+- 将文章的 RSI / harness optimization / Self-Harness / evolutionary search 观点综合进 `harness工程`
+- 更新 `上下文工程`，补充 ACE、MCE 和“上下文管理机制本身可被优化”的理解
+- 更新 `自演化智能体风险`，补充有边界可编辑面、外部权限/评估层和 held-in / held-out 验证
+- 更新 `AI评估`，补充 self-improvement eval、负结果和长期健康评估
+- 更新 `agent 工程地图`，新增“自我改进与优化层”
+- 更新 `wiki/index.md`
+
+## [2026-07-09] ingest | LLM Powered Autonomous Agents
+- 将 `lilianweng-2023-06-23-agent.pdf` 归档到 `raw/assets/`
+- 新建来源页：`Lilian Weng - LLM Powered Autonomous Agents`
+- 将 planning / memory / tool use 的早期 agent 基础框架综合进 `构建高效智能体`
+- 更新 `工具`，补充 API-Bank 的三级工具使用能力
+- 更新 `上下文工程`，补充 agent 记忆类型与 recency / importance / relevance 召回模型
+- 更新 `AI评估`，补充 ChemCrow 案例对 LLM-as-judge 在专业领域的限制
+- 更新 `agent 工程地图` 与 `wiki/index.md`
+
+## [2026-07-09] ingest | Why We Think
+- 将 `lilianweng-2025-05-01-thinking.pdf` 归档到 `raw/assets/`
+- 新建来源页：`Lilian Weng - Why We Think`
+- 新建概念页：`测试时计算（test-time compute）`
+- 将我们讨论出的 `prompt / loop / harness` 分工写入 `harness工程`
+- 更新 `工具`，补充工具作为外部思考与验证资源
+- 更新 `AI评估`，补充 CoT 忠实性、CoT monitor 与 reward hacking 风险
+- 更新 `构建高效智能体`，补充 thinking budget 的边界
+- 更新 `自演化智能体风险`，补充优化 CoT 可能导致隐蔽化 reward hacking
+- 更新 `agent 工程地图` 与 `wiki/index.md`

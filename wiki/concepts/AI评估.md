@@ -2,8 +2,8 @@
 type: concept
 status: active
 created: 2026-04-21
-updated: 2026-06-10
-source_count: 4
+updated: 2026-07-09
+source_count: 7
 tags:
   - concept
   - evaluation
@@ -45,6 +45,16 @@ tags:
 - 不是简单把题目变难（it is not just about making tests harder）
 - 而是不断调整任务形式、时间结构、反馈条件和工具边界（it is about redesigning task form, time structure, feedback conditions, and tool boundaries）
 - 目标是让评估继续保有信号，而不是单纯提高门槛（the goal is to preserve signal, not merely raise the bar）
+
+### 5. 自我改进系统必须评估“改动是否值得合并”
+- 对 self-improving agent，评估不只是判断一次输出好坏（not only judging one output）
+- 还要判断一个 harness / workflow / context 改动是否修复了真实弱点（whether an update fixes a real weakness）
+- 同时必须确认它没有引入未知回归（and does not introduce hidden regressions）
+
+### 6. CoT 是可用信号，但不是最终真相
+- 思维链（chain-of-thought, CoT）能帮助审计模型的中间过程（CoT can help audit intermediate reasoning）
+- 但 CoT 不一定忠实反映模型真实内部过程（CoT is not guaranteed to be faithful）
+- 如果直接优化 CoT 以通过 monitor，模型可能学会隐藏真实意图（optimization pressure can cause obfuscated reward hacking）
 
 ## 核心矛盾
 ### 1. 真实性与抗AI性
@@ -193,6 +203,15 @@ tags:
 - 要定期和人工判断做校准（human calibration）
 - 要允许模型返回 `Unknown` 之类的退出项，避免硬判
 
+专业领域要格外小心 LLM-as-judge。ChemCrow 的案例里，LLM 评估认为 GPT-4 和工具增强的 ChemCrow 表现接近，但领域专家评价显示 ChemCrow 明显更好。这说明通用 judge 可能不知道专业任务的关键错误在哪里。
+
+因此，在化学、医疗、金融、数仓口径、法律等高专业场景里，LLM judge 更适合做初筛或解释辅助，不应作为唯一真相来源。更稳的做法是组合：
+- 专家标注或专家抽检
+- 确定性规则和证据链检查
+- 工具执行结果
+- trace audit
+- 领域特定 rubric
+
 ### 6. 搭好评估运行环境（eval harness）
 agent eval 很容易被“不是 agent 本身的问题”污染，所以 harness 很重要。
 
@@ -255,6 +274,34 @@ agent eval 很容易被“不是 agent 本身的问题”污染，所以 harness
 
 这类评估的目标不是证明 agent 一次性安全，而是证明它在持续变动中没有把安全边界演化掉。
 
+### 11. 对 harness 改动使用 held-in / held-out
+Self-Harness 提供了一个很实用的评估套路：
+- `held-in`：包含已发现失败模式，用来检查候选改动是否真的修复问题
+- `held-out`：不直接暴露给改动生成过程，用来检查是否引入新问题或过拟合
+
+这和普通训练/验证划分类似，但在 agent 场景里更强调 trace 和机制：
+- 不只看最终分数
+- 还要看失败机制是否改变
+- 还要保护原本已经通过的行为
+- 被拒绝的候选也要记录，形成 rejected edits memory
+
+### 12. 评估负结果和长期健康
+自动研究和自我改进系统很容易偏向成功叙事。评估体系应该刻意保存负结果（negative results）：
+- 哪些假设被测试后失败
+- 哪些改动提升了局部分数但破坏了其他能力
+- 哪些实验信号太弱，不足以宣布成功
+- 哪些路径因为成本、风险或长期维护性被放弃
+
+长期任务还需要超出短期 benchmark 的指标：
+- 可维护性（maintainability）
+- ownership 边界
+- 迁移成本
+- 兼容性
+- 未来调试负担
+- 业务长期价值
+
+如果 eval 只奖励短期通过率，agent 会自然学会“把这次做完”，但不一定学会“让系统长期更健康”。
+
 ## 一套够用的最小落地方案（minimum viable eval stack）
 如果现在就要开始做，而不是写完整平台，我建议从这个最小组合开始：
 
@@ -292,6 +339,38 @@ agent eval 很容易被“不是 agent 本身的问题”污染，所以 harness
 可以把它理解成“多层瑞士奶酪（Swiss cheese model）”：
 - 任意一层都会漏问题
 - 多层叠起来，系统才更稳
+
+## Self-improvement eval checklist
+评估自我改进型 agent 或 harness 改动时，可以用这份最小检查清单：
+- 是否有明确失败模式，而不是泛泛说“效果不好”
+- 失败模式是否来自真实 trace，而不是主观猜测
+- 候选改动是否足够窄，能定位因果影响
+- held-in 是否证明原失败被修复
+- held-out 是否证明没有明显回归
+- 是否保护已有通过行为
+- 是否记录被拒绝改动及原因
+- 是否评估安全指标，而不只看任务分数
+- 是否保留完整 transcript / trace 供人工复盘
+- 是否有回滚路径
+
+## 工具使用能力评估
+API-Bank 的三级能力可以作为工具评估的基础框架：
+- Level 1：是否会调用给定 API
+- Level 2：是否会检索和学习 API
+- Level 3：是否会规划多个 API 调用完成模糊任务
+
+这对企业 agent 很实用。一个只会调用固定接口的系统，和一个能发现工具、读文档、组合工具、根据返回修正计划的系统，能力边界完全不同。
+
+## CoT 与 thinking eval
+评估 reasoning model 或 agent loop 时，不能只看最终答案，也不能只看 CoT 是否“看起来合理”。更稳的做法是同时看：
+- 最终答案是否正确
+- 中间工具调用是否必要且有效
+- CoT 是否承认关键提示、证据和不确定性
+- trace 是否能复现结论
+- verifier 是否被 reward hacking
+- 增加 thinking budget 是否真的提升结果，而不是只增加成本
+
+如果模型的 CoT 很漂亮，但工具结果、执行 trace 或领域证据不支持它，应该相信外部证据，而不是相信文本解释。
 
 ## 对知识库 agent 来说怎么做
 如果我们要给这套知识库 agent 做 eval，我会建议先从最小闭环开始。
