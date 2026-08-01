@@ -2,7 +2,7 @@
 type: source
 status: active
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-07-30
 tags:
   - source
   - agent
@@ -13,7 +13,7 @@ tags:
 ## 来源
 - 论文：Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents
 - arXiv：[2509.26354v2](https://arxiv.org/abs/2509.26354)
-- 本地 PDF：[[raw/assets/2509.26354v2.pdf]]
+- 本地 PDF：[[raw/assets/Your Agent May Misevolve - Emergent Risks in Self-evolving LLM Agents.pdf]]
 - 作者：Shuai Shao、Qihan Ren、Chen Qian、Boyi Wei、Dadi Guo、Jingyi Yang、Xinhao Song、Linfeng Zhang、Weinan Zhang、Dongrui Liu、Jing Shao
 - 版本：v2，2026-03-08；ICLR 2026
 ## 核心主张

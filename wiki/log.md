@@ -128,6 +128,10 @@ tags:
 - 将 `agent 工程地图` 从 6 层扩展为 7 层，新增安全与演化层
 - 更新 `wiki/index.md`
 
+## [2026-07-30] maintenance | rename Your Agent May Misevolve PDF
+- 将 `raw/assets/2509.26354v2.pdf` 重命名为 `raw/assets/Your Agent May Misevolve - Emergent Risks in Self-evolving LLM Agents.pdf`
+- 更新来源页中的本地 PDF 链接
+
 ## [2026-06-26] ingest | No Silver Bullet
 - 下载并归档 Fred Brooks `No Silver Bullet` PDF 到 `raw/assets/Brooks-NoSilverBullet.pdf`
 - 新建来源页：`1986 Brooks - No Silver Bullet`
@@ -170,3 +174,7 @@ tags:
 - 更新 `构建高效智能体`，补充 thinking budget 的边界
 - 更新 `自演化智能体风险`，补充优化 CoT 可能导致隐蔽化 reward hacking
 - 更新 `agent 工程地图` 与 `wiki/index.md`
+
+## [2026-07-31] maintenance | rename Lilian Weng harness PDF
+- 将 `raw/assets/harness_engineering_for_self_improvement.pdf` 重命名为 `raw/assets/lilianweng-2026-07-04-harness.pdf`
+- 更新 `Harness Engineering for Self-Improvement` 来源页中的作者双链与原始文件路径

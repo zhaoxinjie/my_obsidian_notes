@@ -67,7 +67,7 @@ tags:
 - 暂无问题归档
 
 ## 综合页
-- [[wiki/syntheses/agent 工程地图|agent 工程地图（agent engineering map）]] - 把当前知识库里的 agent 相关文章整理成 7 层结构地图
+- [[wiki/syntheses/agent 工程地图|agent 工程地图（agent engineering map）]] - 把当前知识库里的 agent 相关文章整理成 9 层结构地图
 - [[wiki/syntheses/企业数仓 Text-to-SQL Agent 落地清单|企业数仓 Text-to-SQL Agent 落地清单]] - 面向数仓场景的短清单，聚焦现在就该做的基础建设
 - [[wiki/syntheses/企业数仓 Text-to-SQL Agent 落地规划|企业数仓 Text-to-SQL Agent 落地规划]] - 面向数仓 `text-to-SQL agent` 的分阶段落地方案
 - [[wiki/syntheses/AI-native 创业|AI-native 创业]] - 围绕 AI-native startup、创始人角色变化与公司构建方式的新支线

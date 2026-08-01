@@ -339,7 +339,6 @@ Self-Harness 提供了一个很实用的评估套路：
 可以把它理解成“多层瑞士奶酪（Swiss cheese model）”：
 - 任意一层都会漏问题
 - 多层叠起来，系统才更稳
-
 ## Self-improvement eval checklist
 评估自我改进型 agent 或 harness 改动时，可以用这份最小检查清单：
 - 是否有明确失败模式，而不是泛泛说“效果不好”

@@ -270,7 +270,6 @@ Lilian Weng 的 `Harness Engineering for Self-Improvement` 把 harness工程进�
 - trace 和日志让人能审计它为什么这样做
 
 因此，近期 agent 能力提升很可能来自“模型更聪明 + harness 更会使用模型”的共同进化，而不是只来自模型参数提升。
-
 ### 持久工作区的治理
 把文件系统当记忆有一个明显风险：文件越来越多后会变成新的垃圾堆。更稳的分层是：
 - `scratch/`：临时草稿，任务结束可删除

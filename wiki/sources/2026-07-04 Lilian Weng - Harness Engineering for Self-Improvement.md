@@ -2,7 +2,7 @@
 type: source
 status: active
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-07-31
 tags:
   - source
   - agent
@@ -12,10 +12,10 @@ tags:
 # 2026-07-04 Lilian Weng - Harness Engineering for Self-Improvement
 ## 来源
 - 标题：`Harness Engineering for Self-Improvement`
-- 作者：Lilian Weng
+- 作者：[[wiki/entities/Lilian Weng|Lilian Weng]]
 - 日期：2026-07-04
 - 原文链接：`https://lilianweng.github.io/posts/2026-07-04-harness/`
-- 原始文件：`raw/assets/harness_engineering_for_self_improvement.pdf`
+- 原始文件：`raw/assets/lilianweng-2026-07-04-harness.pdf`
 ## 一句话总结
 这篇文章把递归自我改进（recursive self-improvement, RSI）从“模型直接改自己权重”扩展为“模型通过 harness、上下文、workflow、评估、工具和部署系统改进自己的工作方式”。它的关键判断是：近期更现实的自我改进路径，不一定发生在模型参数内部，而可能先发生在模型外部的 agent runtime / harness 层。
 ## 核心主张
