@@ -2,7 +2,7 @@
 type: overview
 status: active
 created: 2026-04-21
-updated: 2026-07-09
+updated: 2026-08-03
 tags:
   - index
 ---
@@ -42,6 +42,7 @@ tags:
 - [[wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents|2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents]] - 关于 agent eval 的基本结构、harness、grader、capability/regression 区分与落地路线
 - [[wiki/sources/2026-05-14 Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows|2026-05-14 Spider 2.0 - Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows]] - 关于真实企业 `text-to-SQL workflow` benchmark、复杂 schema、方言、代码库和执行反馈的论文
 - [[wiki/sources/2026-05-23 Anthropic - The Founders Playbook Building an AI-Native Startup|2026-05-23 Anthropic - The Founders Playbook: Building an AI-Native Startup]] - 关于如何从第一天按 AI-native 方式构建创业公司的手册
+- [[wiki/sources/2026-05-31 Baltieri et al - Twenty Years of Bigtable|2026-05-31 Baltieri et al - Twenty Years of Bigtable]] - Google Bigtable 二十年演化总结，覆盖多主复制、数据库内处理、规模化、可靠性、资源效率和服务化运维
 - [[wiki/sources/2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code|2026-06-02 Claude - A Harness for Every Task Dynamic Workflows in Claude Code]] - 关于 Claude Code 动态工作流如何按任务生成多代理 harness，并用编排结构对抗懒惰收尾、自我偏差和目标漂移
 - [[wiki/sources/2026-07-04 Lilian Weng - Harness Engineering for Self-Improvement|2026-07-04 Lilian Weng - Harness Engineering for Self-Improvement]] - 关于 harness 如何作为递归自我改进的近期路径，优化上下文、workflow、harness code 和评估 loop
 
@@ -57,11 +58,13 @@ tags:
 - [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]] - 研究 agent 在自我更新模型、记忆、工具和 workflow 后如何出现安全退化、目标漂移和工具风险
 - [[wiki/concepts/软件工程|软件工程]] - 围绕需求、架构、复杂度、协作与维护的工程学科，其中包含“没有银弹”与本质复杂度判断
 - [[wiki/concepts/测试时计算|测试时计算（test-time compute）]] - 解释模型和 agent 如何在推理时通过更多计算、搜索、验证和修正提升能力
+- [[wiki/concepts/分布式存储系统|分布式存储系统]] - 从 Bigtable 二十年经验提炼稳定内核、异步处理、控制面扩展、隔离、可靠性与资源治理原则
 
 ## 实体页
 - [[wiki/entities/Andrej Karpathy|Andrej Karpathy]] - 提出该模式的研究者与工程师
 - [[wiki/entities/Fred Brooks|Fred Brooks]] - 《The Mythical Man-Month》作者，软件工程“没有银弹”思想的提出者
 - [[wiki/entities/张一鸣|张一鸣]] - 作为人物研究对象建立的长期观察页
+- [[wiki/entities/Bigtable|Bigtable]] - Google 的分布式宽列数据库，以及稳定核心架构持续演化二十年的代表案例
 
 ## 问题页
 - 暂无问题归档

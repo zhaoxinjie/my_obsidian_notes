@@ -178,3 +178,12 @@ tags:
 ## [2026-07-31] maintenance | rename Lilian Weng harness PDF
 - 将 `raw/assets/harness_engineering_for_self_improvement.pdf` 重命名为 `raw/assets/lilianweng-2026-07-04-harness.pdf`
 - 更新 `Harness Engineering for Self-Improvement` 来源页中的作者双链与原始文件路径
+
+## [2026-08-03] ingest | Twenty Years of Bigtable
+- 将 `Twenty Years of Bigtable.pdf` 归档到 `raw/assets/`
+- 新建来源页：`Baltieri et al - Twenty Years of Bigtable`
+- 新建实体页：`Bigtable`
+- 新建概念页：`分布式存储系统`
+- 提炼稳定内核、多主复制、异步处理、控制面扩展、负载隔离、端到端完整性和资源效率等长期经验
+- 更新 `软件工程`，补充长寿系统通过稳定架构持续增量演化的案例
+- 更新 `wiki/index.md`
