@@ -2,8 +2,8 @@
 type: concept
 status: active
 created: 2026-04-21
-updated: 2026-04-21
-source_count: 2
+updated: 2026-06-10
+source_count: 3
 tags:
   - concept
   - mcp
@@ -46,6 +46,11 @@ MCP 的价值在于：
 
 换句话说，MCP 不是孤立协议，它会直接改变 agent 工程的其他层。
 
+### 5. MCP 降低接入成本，也降低风险进入生态的门槛
+- 当 agent 可以把新代码快速封装成 MCP 工具时，能力扩展会更快
+- 但不安全工具、恶意仓库和场景不匹配工具也更容易进入工具库
+- 所以 MCP 工具不能只要求“能调用”，还必须有权限、审计、沙箱和安全扫描
+
 ## 核心组成
 ### 1. 协议化接入
 - 用统一格式暴露工具和资源
@@ -63,6 +68,7 @@ MCP 的价值在于：
 - 它是 [[wiki/concepts/工具|工具（tool）]] 的协议基础（protocol foundation）。工具页更关注工具怎么设计，MCP 更关注工具怎么接入和暴露。
 - 它和 [[wiki/concepts/上下文工程|上下文工程（context engineering）]] 强相关，因为大量 MCP 工具定义会直接占用上下文。
 - 它也和 [[wiki/concepts/构建高效智能体|构建高效智能体（Building Effective Agents）]] 有关，因为 agent 一旦进入多工具环境，协议层设计就会影响整体系统复杂度。
+- 它和 [[wiki/concepts/自演化智能体风险|自演化智能体风险（Misevolution）]] 的关系是：MCP 让工具演化更容易，也让工具安全治理变成基础设施问题。
 
 ## 进一步会遇到的问题
 ### 1. 工具太多
@@ -153,8 +159,10 @@ MCP 的价值在于：
 ## 相关来源
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Code Execution with MCP|2026-04-21 Anthropic Engineering - Code Execution with MCP]]
 - [[wiki/sources/2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use|2026-04-21 Anthropic Engineering - Introducing Advanced Tool Use]]
+- [[wiki/sources/2026-03-08 Shao et al - Your Agent May Misevolve|2026-03-08 Shao et al - Your Agent May Misevolve]]
 
 ## 张力与开放问题
 - MCP 是否会成为长期稳定标准，还是未来会被更高层抽象替代？
 - 当工具规模继续扩大时，协议统一是否足以解决效率问题？
 - MCP 让接入更容易后，权限、安全和可观察性会不会成为更大的新瓶颈？
+- 外部 MCP 工具进入 agent 工具库前，最低安全审查标准应该是什么？

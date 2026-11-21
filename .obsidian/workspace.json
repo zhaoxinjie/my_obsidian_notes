@@ -11,14 +11,10 @@
             "id": "d3a8c20974aecaf3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wiki/concepts/AI评估.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "AI评估"
+              "title": "新标签页"
             }
           }
         ]
@@ -186,6 +182,20 @@
   },
   "active": "d3a8c20974aecaf3",
   "lastOpenFiles": [
+    "raw/assets/harness_engineering_for_self_improvement.pdf",
+    "raw/assets/2509.26354v2.pdf",
+    "raw/assets/张一鸣近10年的微博 (张一鸣).pdf",
+    "raw/assets/harness-design-long-running-apps.pdf",
+    "raw/assets/Brooks-NoSilverBullet.pdf",
+    "wiki/syntheses/企业数仓 Text-to-SQL Agent 落地规划.md",
+    "raw/sources/README.md",
+    "wiki/concepts/个人知识库.md",
+    "wiki/syntheses/AI-native 创业.md",
+    "wiki/sources/2026-05-23 Anthropic - The Founders Playbook Building an AI-Native Startup.md",
+    "raw/assets/The Founders Playbook Building an AINative Startup.pdf",
+    "wiki/concepts/构建高效智能体.md",
+    "wiki/syntheses/企业数仓 Text-to-SQL Agent 落地清单.md",
+    "wiki/concepts/AI评估.md",
     "wiki/concepts/工具.md",
     "wiki/sources/2026-04-22 Anthropic Engineering - Demystifying Evals for AI Agents.md",
     "raw/assets/demystifying-evals-for-ai-agents.pdf",
@@ -198,13 +208,8 @@
     "wiki/entities/张一鸣.md",
     "raw/assets/claude-think-tool.pdf",
     "raw/claude-think-tool.pdf",
-    "raw/assets/effective-context-engineering-for-ai-agents.pdf",
-    "raw/assets/张一鸣近10年的微博 (张一鸣).pdf",
-    "raw/assets/你不知道的 Claude Code：架构、治理与工程实践 - Tw93.pdf",
-    "raw/你不知道的 Claude Code：架构、治理与工程实践 - Tw93.pdf",
     "wiki/concepts/LLM Wiki.md",
     "wiki/concepts/harness工程.md",
-    "raw/assets/harness-design-long-running-apps.pdf",
     "wiki/sources/2026-04-21 Anthropic - Building Effective Agents.md",
     "wiki/sources/2026-04-21 Karpathy - LLM Wiki.md",
     "wiki/sources/2026-04-21 Anthropic Research - Introducing Contextual Retrieval.md",
@@ -212,16 +217,7 @@
     "wiki/sources/2026-04-21 Xi et al. - The Rise and Potential of Large Language Model Based Agents A Survey.md",
     "wiki/concepts/README.md",
     "wiki/concepts/LLM-based Agents.md",
-    "wiki/concepts/构建高效智能体.md",
     "wiki/questions/README.md",
-    "wiki/entities/README.md",
-    "wiki/entities/Zhiheng Xi.md",
-    "wiki/concepts/Brain Perception Action Framework.md",
-    "wiki/concepts/AI评估.md",
-    "wiki/concepts/个人知识库.md",
-    "raw/sources/2026-03-12 Tw93 - 你不知道的 Claude Code：架构、治理与工程实践.md",
-    "system/templates/concept-page-template.md",
-    "wiki/sources/2026-04-21 Anthropic Engineering - Effective Harnesses for Long-Running Agents.md",
     "未命名.canvas"
   ]
 }
