@@ -11,12 +11,10 @@
             "id": "d3a8c20974aecaf3",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "raw/assets/2509.26354v2.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "2509.26354v2"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]

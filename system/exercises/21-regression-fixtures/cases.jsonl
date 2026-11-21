@@ -1,0 +1,4 @@
+{"id": "ready_valid", "expected": "accept", "reply": "{\"status\": \"ready\", \"request\": {\"table\": \"dwd.orders\", \"fields\": [\"id\"], \"day\": \"2026-11-09\"}, \"questions\": []}"}
+{"id": "missing_valid", "expected": "accept", "reply": "{\"status\": \"needs_info\", \"request\": null, \"questions\": [\"请提供日期。\"]}"}
+{"id": "ready_with_question", "expected": "reject", "reply": "{\"status\": \"ready\", \"request\": {\"table\": \"dwd.orders\", \"fields\": [\"id\"], \"day\": \"2026-11-09\"}, \"questions\": [\"日期是哪天？\"]}"}
+{"id": "broken_json", "expected": "reject", "reply": "{"}
